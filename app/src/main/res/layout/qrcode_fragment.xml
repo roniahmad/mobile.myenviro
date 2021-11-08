@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Airschedule. All rights reserved.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ticket_content"
+    android:layout_width="@dimen/welcome_content_width"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/spacing_normal"
+    android:layout_marginRight="@dimen/spacing_normal"
+    app:cardBackgroundColor="@color/app_white"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:id="@+id/code_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/hospital_name"
+            style="@style/TicketHeader"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/business_name"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/hospital_addres"
+            style="@style/TicketSubHeader"
+            android:layout_marginTop="@dimen/spacing_micro"
+            android:layout_marginBottom="@dimen/spacing_micro"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/business_address"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <ImageView
+            android:id="@+id/pxcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_qrcode"
+            android:layout_gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/scanme"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TicketSubHeader"
+            android:textSize="14sp"
+            android:text="@string/scan_here"
+            android:layout_marginTop="@dimen/spacing_micro"
+            android:layout_marginBottom="@dimen/spacing_micro"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

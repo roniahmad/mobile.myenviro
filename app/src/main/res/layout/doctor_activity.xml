@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.rsbunda.myenviro.dashboard.DoctorFragment"
+    android:id="@+id/doctor_frag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout="@layout/doctor_fragment" />

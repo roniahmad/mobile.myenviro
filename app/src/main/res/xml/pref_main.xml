@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_cat_general">
+
+        <EditTextPreference
+            android:key="@string/pref_user_history_list"
+            android:title="@string/title_history_list"
+            android:summary="@string/default_history_list"
+            android:defaultValue="@string/default_history_list"
+            android:inputType="number"/>
+
+<!--        <CheckBoxPreference-->
+<!--            android:defaultValue="true"-->
+<!--            android:key="@string/key_send_statistic"-->
+<!--            android:title="@string/title_auto_send"-->
+<!--            android:summary="@string/summary_send_statistic" />-->
+
+        <ListPreference
+            android:defaultValue="3"
+            android:dialogTitle="@string/title_news_list"
+            android:entries="@array/list_preference_news_entries"
+            android:entryValues="@array/list_preference_news_entries"
+            android:key="@string/pref_user_news_list"
+            android:title="@string/title_news_list"
+            android:summary="%s"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_use_last_login_id"
+            android:title="@string/title_use_last_login_id"
+            android:summary="@string/summary_use_last_login_id" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_display_popup_alert"
+            android:title="@string/title_display_popup_alert"
+            android:summary="@string/summary_display_popup_alert"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_enable_estimate_time"
+            android:title="@string/title_enable_est_waiting"
+            android:summary="@string/summary_display_est_waiting"/>
+
+    </PreferenceCategory>
+
+<!--    <PreferenceCategory android:title="@string/pref_cat_notifications">-->
+
+<!--        <SwitchPreference-->
+<!--            android:defaultValue="true"-->
+<!--            android:key="@string/key_notifications_new_message"-->
+<!--            android:title="@string/title_new_notification_sound" />-->
+
+<!--        <SwitchPreference-->
+<!--            android:defaultValue="true"-->
+<!--            android:key="@string/key_vibrate"-->
+<!--            android:title="@string/title_vibrate"-->
+<!--            android:summary="@string/summary_vibrate"/>-->
+
+<!--    </PreferenceCategory>-->
+
+    <PreferenceCategory android:title="@string/pref_cat_about">
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/about_myenviro" />
+
+        <Preference
+            android:key="@string/pref_app_version"
+            android:title="@string/title_version"
+            android:summary="@string/summary_version"/>
+
+        <Preference
+            android:key="@string/pref_app_contributor"
+            android:title="@string/title_contributors"/>
+
+        <Preference
+            android:key="@string/pref_app_osl"
+            android:title="@string/title_licenses"/>
+
+        <Preference
+            android:key="@string/pref_user_help"
+            android:title="@string/title_help"/>
+
+        <Preference
+            android:key="@string/pref_user_faq"
+            android:title="@string/title_faq"
+            android:summary="@string/summary_faq"/>
+
+        <Preference
+            android:key="@string/pref_user_privacy"
+            android:title="@string/title_policy"/>
+
+        <Preference
+            android:key="@string/pref_user_tos"
+            android:title="@string/title_tos"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

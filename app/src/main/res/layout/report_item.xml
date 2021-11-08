@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_normal">
+
+    <LinearLayout
+        android:id="@+id/container_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/title_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                style="@style/Client.Subtitle"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"/>
+
+            <ImageButton
+                android:id="@+id/btn_more"
+                android:src="@drawable/ic_more_vert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"/>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/dac_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Front Office"
+            style="@style/Client.Desc"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_timing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_start"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_label_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/start_date"
+                    style="@style/Client.Subtitle"/>
+
+                <TextView
+                    android:id="@+id/dac_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_label_start"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="06:00:00"
+                    style="@style/Client.Date"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="@dimen/spacing_normal"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_label_end"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/end_date"
+                    style="@style/Client.Subtitle"/>
+
+                <TextView
+                    android:id="@+id/dac_end"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_label_end"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="06:00:00"
+                    style="@style/Client.Date"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="@dimen/spacing_normal"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_duration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/spacing_normal">
+
+        <TextView
+            android:id="@+id/tv_label_duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/duration"
+            style="@style/Client.Subtitle"/>
+
+        <TextView
+            android:id="@+id/dac_duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_duration"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1 September 2022"
+            style="@style/Client.Desc"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/spacing_normal"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/container_kind_of_work"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/spacing_normal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kind_of_work"
+            style="@style/Client.Subtitle"/>
+
+        <TextView
+            android:id="@+id/dac_kind_of_work"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Lorem ipsum dolor"
+            style="@style/Client.Desc"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_work_todo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/spacing_normal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/work_todo"
+            style="@style/Client.Subtitle"/>
+
+        <TextView
+            android:id="@+id/dac_work_todo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Lorem ipsum dolor"
+            style="@style/Client.Desc"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_remarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/spacing_normal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remark"
+            style="@style/Client.Subtitle"/>
+
+        <TextView
+            android:id="@+id/dac_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Lorem ipsum dolor"
+            style="@style/Client.Desc"
+            android:textAllCaps="false"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+
+            <include layout="@layout/empty_layout2"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

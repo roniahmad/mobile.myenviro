@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/control_panel_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:gravity="center|top"
+    android:visibility="visible">
+
+    <View
+        android:layout_width="56dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="@dimen/spacing_micro"/>
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_margin="@dimen/spacing_normal"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_normal">
+
+        <RelativeLayout
+            android:id="@+id/card_teams_daily_activity"
+            android:layout_width="@dimen/bottomsheet_button_width"
+            android:layout_height="@dimen/bottomsheet_button_width"
+            android:background="@drawable/circle_button"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/img_dac"
+                android:layout_width="@dimen/cp_image_width"
+                android:layout_height="@dimen/cp_image_height"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/ic_dashboard_daily_activity"
+                app:tint="?attr/colorControlNormal"/>
+
+            <TextView
+                android:id="@+id/tv_attendance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_dac"
+                android:layout_centerHorizontal="true"
+                android:text="@string/cp_daily_activity"
+                android:textSize="@dimen/app_text_size_medium" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/card_teams_member"
+            android:layout_width="@dimen/bottomsheet_button_width"
+            android:layout_height="@dimen/bottomsheet_button_width"
+            android:background="@drawable/circle_button"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/img_teams"
+                android:layout_width="@dimen/cp_image_width"
+                android:layout_height="@dimen/cp_image_height"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/ic_people"
+                app:tint="?attr/colorControlNormal" />
+
+            <TextView
+                android:id="@+id/tv_teams"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_teams"
+                android:layout_centerHorizontal="true"
+                android:text="@string/cp_teams_member"
+                android:textSize="@dimen/app_text_size_medium" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2019 PT Permata Bunda Bersama
+  Developer:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/account_content"
+        android:name="com.rsbunda.myenviro.home.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:layout="@layout/home_fragment" />
+
+    <com.rsbunda.myenviro.ui.widget.BadgedBottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.HalloBunda.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemIconTint="@drawable/bottom_navigation_item_colors"
+        app:itemTextColor="@drawable/bottom_navigation_item_colors"
+        app:menu="@menu/bottom_nav_items"
+        app:labelVisibilityMode="labeled"
+        app:itemHorizontalTranslationEnabled="true"/>
+
+</LinearLayout>

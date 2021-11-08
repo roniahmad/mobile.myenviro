@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/control_panel_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_normal"
+    android:gravity="center"
+    android:visibility="visible">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/poly_card_height"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_teams"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/app_white"
+                android:foreground="?selectableItemBackgroundBorderless"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="@dimen/spacing_normal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_teams"
+                        android:layout_width="@dimen/cp_image_width"
+                        android:layout_height="@dimen/cp_image_height"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_dashboard_people" />
+
+                    <TextView
+                        android:id="@+id/tv_teams"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_teams"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/cp_teams"
+                        android:textSize="@dimen/app_text_size_large" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_report"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/app_white"
+                android:foreground="?selectableItemBackgroundBorderless"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="@dimen/spacing_normal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_report"
+                        android:layout_width="@dimen/cp_image_width"
+                        android:layout_height="@dimen/cp_image_height"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_dashboard_inspection" />
+
+                    <TextView
+                        android:id="@+id/tv_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_report"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/cp_report"
+                        android:textSize="@dimen/app_text_size_large" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/poly_card_height"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_document"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/app_white"
+                android:foreground="?selectableItemBackgroundBorderless"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="@dimen/spacing_normal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_document"
+                        android:layout_width="@dimen/cp_image_width"
+                        android:layout_height="@dimen/cp_image_height"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_dashboard_files"
+                        app:tint="@color/body_text_disabled"/>
+
+                    <TextView
+                        android:id="@+id/tv_document"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_document"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/cp_document"
+                        android:textSize="@dimen/app_text_size_large"
+                        android:textColor="@color/body_text_disabled"/>
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_attendance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/app_white"
+                android:foreground="?selectableItemBackgroundBorderless"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:clickable="true"
+                android:focusable="true"
+
+                android:layout_margin="@dimen/spacing_normal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_attendance"
+                        android:layout_width="@dimen/cp_image_width"
+                        android:layout_height="@dimen/cp_image_height"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_dashboard_attendance"
+                        app:tint="@color/body_text_disabled"/>
+
+                    <TextView
+                        android:id="@+id/tv_attendance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_attendance"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/cp_attendance"
+                        android:textColor="@color/body_text_disabled"
+                        android:textSize="@dimen/app_text_size_large" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/poly_card_height"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_performance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/app_white"
+                android:foreground="?selectableItemBackgroundBorderless"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="@dimen/spacing_normal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_performance"
+                        android:layout_width="@dimen/cp_image_width"
+                        android:layout_height="@dimen/cp_image_height"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_dashboard_meter"
+                        app:tint="@color/body_text_disabled"/>
+
+                    <TextView
+                        android:id="@+id/tv_performance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_performance"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/cp_performance"
+                        android:textSize="@dimen/app_text_size_large"
+                        android:textColor="@color/body_text_disabled"/>
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_notification"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/app_white"
+                android:foreground="?selectableItemBackgroundBorderless"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="@dimen/spacing_normal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_notification"
+                        android:layout_width="@dimen/cp_image_width"
+                        android:layout_height="@dimen/cp_image_height"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_dashboard_notifications"
+                        app:tint="@color/body_text_disabled"/>
+
+                    <TextView
+                        android:id="@+id/tv_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_notification"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/cp_notification"
+                        android:textSize="@dimen/app_text_size_large"
+                        android:textColor="@color/body_text_disabled"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
+
+

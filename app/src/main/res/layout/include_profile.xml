@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2019 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".account.AccountActivity"
+    android:background="@color/warm_grey"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="@dimen/main_content_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|top"
+        android:background="@color/content_background"
+        android:clipToPadding="false"
+        android:elevation="@dimen/card_elevation"
+        android:paddingBottom="?actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/details_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_normal"
+            tools:ignore="RtlSymmetry">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- user login block -->
+                <LinearLayout
+                    android:id="@+id/user_login_block"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_marginTop="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_normal"
+                        android:background="@null">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/become_member"
+                            style="@style/ContentEmpty"
+                            android:textColor="@color/app_white"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/spacing_normal"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <Button
+                                android:id="@+id/login_link"
+                                style="@style/Widget.HalloBunda.Login"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="@string/signin"
+                                android:visibility="visible"/>
+
+                            <Button
+                                android:id="@+id/register_link"
+                                style="@style/Widget.HalloBunda.Register"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/spacing_normal"
+                                android:gravity="center"
+                                android:text="@string/signup"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!-- end user login block -->
+
+                <!-- account information block -->
+                <LinearLayout
+                    android:id="@+id/user_account_block"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:paddingTop="@dimen/padding_normal"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <com.rsbunda.myenviro.ui.widget.BezelImageView
+                        android:id="@+id/user_profile"
+                        android:layout_width="@dimen/underconstruction_profile_image_size"
+                        android:layout_height="@dimen/underconstruction_profile_image_size"
+                        android:src="@drawable/anonymous"
+                        android:layout_marginTop="45dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        app:maskDrawable="@drawable/circle_mask"
+                        android:background="?selectableItemBackgroundBorderless"/>
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_marginTop="@dimen/spacing_micro"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/ProfileName"
+                        android:text="Roni Ahmad"
+                        android:paddingStart="@dimen/padding_normal"
+                        android:paddingEnd="@dimen/padding_normal"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/user_address"
+                        android:layout_marginTop="@dimen/spacing_micro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/padding_normal"
+                        android:paddingEnd="@dimen/padding_normal"
+                        style="@style/ProfileAddress"
+                        android:text="Jl. Manukan Subur 34F/2 Surabaya"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/info_content"
+                android:layout_width="@dimen/welcome_content_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/padding_normal"
+                android:layout_marginRight="@dimen/padding_normal"
+                app:cardBackgroundColor="@color/app_white"
+                android:elevation="@dimen/card_elevation"
+                card_view:cardCornerRadius="@dimen/card_corner_radius">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+
+                    <Button
+                        android:id="@+id/recommend_link"
+                        style="@style/Widget.HalloBunda.AccItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_recommend_us"
+                        android:drawablePadding="@dimen/padding_normal"
+                        android:drawableStart="@drawable/ic_favorite"
+                        android:drawableEnd="@drawable/ic_chevron_right"
+                        android:visibility="visible"/>
+
+                    <Button
+                        android:id="@+id/rate_this_app_link"
+                        style="@style/Widget.HalloBunda.AccItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_rate_app"
+                        android:drawablePadding="@dimen/padding_normal"
+                        android:drawableStart="@drawable/ic_star"
+                        android:drawableEnd="@drawable/ic_chevron_right"
+                        android:visibility="visible"/>
+
+                    <Button
+                        android:id="@+id/about_link"
+                        style="@style/Widget.HalloBunda.AccItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_about_hospital"
+                        android:drawablePadding="@dimen/padding_normal"
+                        android:drawableStart="@drawable/ic_info"
+                        android:drawableEnd="@drawable/ic_chevron_right"
+                        android:visibility="visible"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/account_content"
+                android:layout_width="@dimen/welcome_content_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:layout_marginLeft="@dimen/padding_normal"
+                android:layout_marginRight="@dimen/padding_normal"
+                app:cardBackgroundColor="@color/app_white"
+                android:elevation="@dimen/card_elevation"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+<!--                    <Button-->
+<!--                        android:id="@+id/reset_link"-->
+<!--                        style="@style/Widget.HalloBunda.AccItem"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Reset"-->
+<!--                        android:drawablePadding="@dimen/padding_normal"-->
+<!--                        android:drawableStart="@drawable/ic_setting"-->
+<!--                        android:drawableEnd="@drawable/ic_chevron_right"-->
+<!--                        android:visibility="visible"/>-->
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/change_password_link"
+                style="@style/Widget.HalloBunda.Login.Account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/change_password"
+                android:layout_marginStart="@dimen/padding_normal"
+                android:layout_marginEnd="@dimen/padding_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:visibility="visible"/>
+
+            <Button
+                android:id="@+id/logout_link"
+                style="@style/Widget.HalloBunda.Logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/click_to_logout"
+                android:layout_marginStart="@dimen/padding_normal"
+                android:layout_marginEnd="@dimen/padding_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tv_app_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_main"
+                style="@style/Widget.HalloBunda.Version"
+                tools:text="Version 1.4.278" />
+
+            <TextView
+                android:id="@+id/about_developer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:layout_marginBottom="@dimen/padding_normal"
+                android:text="@string/about_copyrights"
+                style="@style/AboutCopyright"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

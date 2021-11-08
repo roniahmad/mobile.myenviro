@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/warm_grey"
+    tools:context=".welcome.WelcomeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.HalloBunda.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/transparent"
+            app:popupTheme="@style/Theme.HalloBunda.PopupOverlay" >
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.ToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_to_myenviro" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/welcome_scrolling_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="?actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/welcome_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_normal"
+            tools:ignore="RtlSymmetry">
+
+            <!-- welcome fragments inserted here -->
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Button bar -->
+    <LinearLayout
+        android:id="@+id/welcome_button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="bottom"
+        android:background="@color/greyish_brown"
+        android:elevation="@dimen/welcome_button_bar_elevation"
+        android:gravity="end"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        tools:ignore="UselessParent"
+        tools:targetApi="lollipop">
+
+        <Button
+            android:id="@+id/button_decline"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/decline"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/button_accept"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/accept"
+            android:textColor="@color/aqua_marine" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

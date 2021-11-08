@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2019 RS Bunda. All rights reserved.
+
+  -->
+<resources>
+    <string name="eula_legal_text"><b>Your use of this app is governed by:</b>\na) the PT Permata Bunda Bersama Terms of Service (https://myenviro.id/tos);\nb) PT Permata Bunda Bersama\'s Privacy Policy (https://myenviro.id/policy). \n</string>
+</resources>

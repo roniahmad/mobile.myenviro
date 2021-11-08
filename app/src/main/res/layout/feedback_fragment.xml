@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2019 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:transitionName="@string/transition_session_background"
+    android:background="@color/colorPrimary"
+    app:statusBarBackground="@null">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.HalloBunda.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/transparent"
+            app:popupTheme="@style/Theme.HalloBunda.PopupOverlay" >
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.ToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_feedback" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="@dimen/main_content_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|top"
+            android:clipToPadding="false"
+            android:elevation="@dimen/card_elevation"
+            android:layout_marginTop="?actionBarSize"
+            android:layout_marginBottom="?actionBarSize"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_normal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        style="@style/hero.headerText.NoMode"
+                        android:textColor="@color/white"
+                        android:text="@string/give_us_feedback"/>
+
+                    <ImageView
+                        android:layout_width="@dimen/login_image_width"
+                        android:layout_height="@dimen/login_image_height"
+                        android:src="@drawable/ic_logo_white"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_micro"
+                    app:cardBackgroundColor="@color/whiteTextColor"
+                    app:cardCornerRadius="@dimen/card_corner_radius">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/spacing_micro"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/poli_name"
+                            style="@style/Registration.Title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/padding_normal"
+                            android:layout_marginEnd="@dimen/padding_normal"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textAlignment="viewStart"
+                            tools:text="Poli Mata" />
+
+                        <TextView
+                            android:id="@+id/doctor_name"
+                            style="@style/Registration.Subtitle"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="@dimen/padding_normal"
+                            android:layout_marginEnd="@dimen/padding_normal"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:drawableStart="@drawable/ic_person"
+                            android:drawablePadding="@dimen/spacing_normal"
+                            android:textAlignment="viewStart"
+                            tools:text="dr Daniar" />
+
+                        <TextView
+                            android:id="@+id/time_hint"
+                            style="@style/Registration.TimeHint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/padding_normal"
+                            android:layout_marginEnd="@dimen/padding_normal"
+                            android:drawableStart="@drawable/ic_today"
+                            android:drawablePadding="@dimen/spacing_normal"
+                            android:focusable="true"
+                            android:visibility="visible"
+                            tools:text="Rabu 18:00 - Selesai" />
+
+                        <LinearLayout
+                            android:id="@+id/rating_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            tools:ignore="RtlSymmetry">
+
+                            <RatingBar
+                                android:id="@+id/rating_bar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_normal"
+                                android:numStars="5"
+                                android:rating="5"
+                                android:stepSize="1" />
+
+                            <TextView
+                                android:id="@+id/rating_scale"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rating_about"
+                                android:gravity="center"
+                                style="@style/Registration.Subtitle"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/textRegisterDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_normal">
+                                <EditText
+                                    android:id="@+id/feedback_input"
+                                    style="@style/modifiedEditText"
+                                    android:gravity="top"
+                                    android:ems="10"
+                                    android:inputType="textMultiLine"
+                                    android:lines="5"
+                                    android:hint="@string/tell_us_your_feedback">
+                                </EditText>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/feedback_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="?actionBarSize"
+            style="@style/Widget.HalloBunda.Login"
+            android:text="@string/send_feedback"
+            android:layout_marginEnd="@dimen/padding_normal"
+            android:layout_marginStart="@dimen/padding_normal"
+            android:layout_marginBottom="@dimen/padding_normal"
+            android:textColor="@color/app_white"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

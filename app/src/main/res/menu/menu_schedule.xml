@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_setting_menu"
+        app:showAsAction="always"
+        android:title="@string/menu_item_setting"/>
+
+    <item
+        android:id="@+id/menu_holiday"
+        android:title="@string/menu_item_holiday"
+        app:showAsAction="withText|collapseActionView"/>
+
+</menu>

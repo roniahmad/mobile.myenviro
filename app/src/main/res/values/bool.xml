@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- On API 23+ draw behind the status bar on session details. Flag indicating if we want to
+         add extra padding to views to compensate for this. -->
+    <bool name="event_details_immersive_status">false</bool>
+
+</resources>

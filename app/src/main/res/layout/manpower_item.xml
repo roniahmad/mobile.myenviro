@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout
+    android:id="@+id/manpower_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:background="@drawable/select_item_background"
+    android:padding="@dimen/spacing_normal">
+
+    <com.rsbunda.myenviro.ui.widget.BezelImageView
+        android:id="@+id/img_hero"
+        android:layout_width="@dimen/navdrawer_profile_image_size"
+        android:layout_height="@dimen/navdrawer_profile_image_size"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_envihero"
+        app:maskDrawable="@drawable/circle_mask"
+        android:layout_gravity="center"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:id="@+id/hero_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal">
+
+        <TextView
+            android:id="@+id/hero_name"
+            style="@style/Hero.Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Pep Guardiola"/>
+
+        <TextView
+            android:id="@+id/hero_nip"
+            style="@style/Hero.Nip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_nip"
+            android:textColor="@color/body_text_1"/>
+
+        <TextView
+            android:id="@+id/hero_jabatan"
+            style="@style/Hero.Jabatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_jabatan"/>
+
+    </LinearLayout>
+
+</LinearLayout>

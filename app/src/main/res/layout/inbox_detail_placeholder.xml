@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:statusBarBackground="@null"
+    android:background="@color/placeholder_bg"
+    tools:context=".inbox.InboxDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_normal"
+        android:paddingTop="@dimen/padding_normal"
+        android:layout_marginLeft="@dimen/padding_normal"
+        android:layout_marginRight="@dimen/padding_normal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/placeholder_text_size_xlarge"
+                android:background="@color/placeholder_fg"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/placeholder_text_size_medium"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:background="@color/placeholder_fg"/>
+
+            <!-- location -->
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cached"
+                    android:tint="@color/placeholder_fg"
+                    android:layout_gravity="top"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/placeholder_fg"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:layout_marginTop="@dimen/spacing_micro"
+                        android:background="@color/placeholder_fg"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Due Date -->
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cached"
+                    android:tint="@color/placeholder_fg"
+                    android:layout_gravity="top"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/placeholder_text_size_medium"
+                    android:layout_marginLeft="@dimen/spacing_normal"
+                    android:background="@color/placeholder_fg"/>
+
+            </LinearLayout>
+
+            <View
+                android:textAppearance="@style/Schedule.ItemTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/placeholder_text_size_large"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:background="@color/placeholder_fg"/>
+
+            <!-- contact person-->
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cached"
+                    android:tint="@color/placeholder_fg"
+                    android:layout_gravity="top"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/placeholder_fg"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/placeholder_fg"
+                        android:layout_marginTop="@dimen/spacing_micro"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/placeholder_fg"
+                        android:layout_marginTop="@dimen/spacing_micro"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:baselineAligned="false"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/padding_normal"
+    android:paddingLeft="@dimen/padding_normal"
+    android:paddingTop="@dimen/spacing_normal"
+    android:paddingEnd="@dimen/padding_normal"
+    android:paddingRight="@dimen/padding_normal"
+    android:paddingBottom="@dimen/spacing_normal">
+
+    <FrameLayout
+        android:id="@+id/icon_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_normal"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <!-- Preference should place its actual preference widget here. -->
+    <LinearLayout
+        android:id="@android:id/widget_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical" />
+
+</LinearLayout>

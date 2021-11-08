@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2019 RS Bunda
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:descendantFocusability="blocksDescendants">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:elevation="@dimen/card_elevation"
+        card_view:cardCornerRadius="@dimen/card_corner_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chk_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/hospital_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/spacing_normal"
+                android:paddingRight="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:gravity="left"
+                style="@style/TOSHospitalSubHeader"
+                tools:text="KODE POLI"
+                android:layout_below="@id/chk_hospital"/>
+
+
+
+            <TextView
+                android:id="@+id/hospital_addres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thumbnail"
+                android:paddingLeft="@dimen/padding_normal_button"
+                android:paddingRight="@dimen/padding_normal_button"
+                style="@style/TOSHospitalSubHeader"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <com.rsbunda.myenviro.ui.widget.BezelImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="@dimen/maskot_image_size"
+                android:layout_height="@dimen/maskot_image_size"
+                android:src="@drawable/ic_envihero"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:scaleType="centerInside"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/hospital_name"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+
+
+

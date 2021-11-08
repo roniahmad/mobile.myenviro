@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2019 RS Bunda. All rights reserved.
+
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/padding_normal"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/padding_normal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/title_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/product_name"
+                style="@style/Schedule.Day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                tools:text="Product Name" />
+
+            <ImageButton
+                android:id="@+id/btn_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_more_vert" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/block_cp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/spacing_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_container"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/add_bookmark"
+                android:src="@drawable/ic_person" />
+
+            <TextView
+                android:id="@+id/product_cp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_micro"
+                style="@style/Schedule.Day"
+                tools:text="9:00 AM - 11:30 AM"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/block_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/block_cp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/add_bookmark"
+                android:src="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/phone_cp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_micro"
+                style="@style/Schedule.Quota"
+                tools:text="@string/email" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/block_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/block_phone"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/add_bookmark"
+                android:src="@drawable/ic_email" />
+
+            <TextView
+                android:id="@+id/email_cp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_micro"
+                style="@style/Schedule.Quota"
+                tools:text="@string/email" />
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/block_email" >
+
+            <Button
+                android:id="@+id/offer_button"
+                style="@style/Widget.HalloBunda.PxRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/padding_normal"
+                android:text="@string/sendme_offer" />
+
+        </RelativeLayout >
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
+

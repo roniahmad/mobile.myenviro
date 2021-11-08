@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <declare-styleable name="BezelImageView">
+        <attr name="maskDrawable" format="reference" />
+        <attr name="borderDrawable" format="reference" />
+        <attr name="desaturateOnPress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AspectRatioView">
+        <attr name="aspectRatio" format="float" />
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="BadgedBottomNavigationView">
+        <attr name="badgeColor" format="color"/>
+        <attr name="badgeRadius" format="dimension"/>
+    </declare-styleable>
+</resources>

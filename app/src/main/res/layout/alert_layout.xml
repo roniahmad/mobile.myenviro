@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout
+    android:id="@+id/register_account_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    android:focusableInTouchMode="true"
+    android:padding="@dimen/padding_normal"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/first_step_register"
+            style="@style/HAlert.Header"/>
+
+        <ImageView
+            android:id="@+id/img_message"
+            android:layout_width="@dimen/login_image_width"
+            android:layout_height="@dimen/login_image_height"
+            android:src="@drawable/ic_envihero"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/padding_normal"
+        android:text="@string/mission_content_1"
+        style="@style/HAlert.Message" />
+
+</LinearLayout>

@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright 2019 RS Bunda Surabaya
+
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Prevents crash on certain devices to namespace conflict -->
+    <style name="FrameworkRoot.Theme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="Theme.HalloBunda" parent="FrameworkRoot.Theme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:homeAsUpIndicator">@drawable/ic_up</item>
+        <item name="homeAsUpIndicator">@drawable/ic_up</item>
+
+        <item name="android:textColorPrimary">@color/text_primary_light</item>
+        <item name="android:textColorLink">@color/links</item>
+        <item name="android:textViewStyle">@style/Widget.HalloBunda.TextView</item>
+        <item name="android:textAppearance">@style/TextAppearance.H4</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance.H4</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance.H3</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance.H1</item>
+
+        <item name="android:borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+        <item name="preferenceTheme">@style/SettingsPreferenceThemeOverlay</item>
+        <item name="android:listDivider">@drawable/list_divider</item>
+        <item name="android:dividerHeight">@dimen/divider_height</item>
+        <item name="android:divider">@color/off_white</item>
+        <item name="android:alertDialogTheme">@style/Theme.HalloBunda.AlertDialog</item>
+    </style>
+
+    <style name="Theme.HalloBunda.Light" parent="Theme.HalloBunda">
+        <item name="colorPrimaryDark">@color/dark_status_bar</item>
+    </style>
+
+    <style name="Theme.HalloBunda.Immersive">
+        <item name="android:statusBarColor">@color/immersive_status_bar</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- Themes Per Activity -->
+    <style name="Theme.HalloBunda.Splash" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.Welcome" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.Home" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.Schedule" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.History" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.Profile" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.BarcodeReader" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.QrCode" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.Inbox" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.Account" parent="@style/Theme.HalloBunda" />
+
+    <style name="Theme.HalloBunda.AlertDialog" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="android:colorAccent">@color/theme_accent_2</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="Theme.HalloBunda.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.HalloBunda.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.HalloBunda.Settings" parent="Theme.AppCompat.Light" >
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- colorPrimaryDark is used for the status bar (with the
+             battery, clock, etc). -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- colorAccent is used as the default value for
+             colorControlActivated which is used to tint widgets. -->
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColorPrimary">@color/abc_primary_text_material_light</item>
+
+        <!-- android:textColorPrimaryInverse is the  color of the title
+             text in the Toolbar, in the Theme.AppCompat.Light theme:  -->
+        <item name="android:textColorPrimaryInverse">@color/abc_primary_text_material_light</item>
+
+        <!-- android:actionMenuTextColor is the color of the text of
+              action (menu) items in the Toolbar, at least in the
+              Theme.AppCompat theme.
+              For some reason, they already get the textColorPrimary
+              when running on API 21, but not on older versions of
+              Android, so this is only necessary to support older
+              Android versions.-->
+        <item name="actionMenuTextColor">@color/abc_primary_text_material_light</item>
+        <!-- android:textColorSecondary is the color of the menu
+             overflow icon (three vertical dots) -->
+        <item name="android:textColorSecondary">@color/abc_secondary_text_material_light</item>
+
+    </style>
+
+
+    <style name="SettingsPreferenceThemeOverlay" parent="PreferenceThemeOverlay">
+        <item name="switchPreferenceCompatStyle">@style/SettingsSwitchPreference</item>
+    </style>
+
+    <style name="SettingsSwitchPreference" parent="Preference.SwitchPreferenceCompat">
+        <item name="android:layout">@layout/bunda_preferences</item>
+    </style>
+
+    <style name="AppBar">
+        <item name="android:elevation">@dimen/appbar_elevation</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:theme">@style/ThemeOverlay.LightToolbar</item>
+    </style>
+
+    <!-- Text appearances -->
+    <style name="TransparentText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#00000000</item>
+    </style>
+
+    <style name="TextAppearance.H1" parent="@style/TextAppearance.AppCompat.Large">
+    </style>
+
+    <style name="TextAppearance.H3" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.H4" parent="@style/TextAppearance.AppCompat.Small">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextAppearance.H5" parent="@style/TextAppearance.AppCompat.Small">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <!-- Widget styles-->
+    <style name="Widget.HalloBunda" parent="android:Widget" />
+
+    <style name="Widget.HalloBunda.SignupButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/signup_button_text</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.HalloBunda.ForgotButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/forgot_button_text</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.HalloBunda.Button.Aqua" parent="@style/Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@color/aqua_marine</item>
+    </style>
+
+    <style name="Widget.HalloBunda.TextView" parent="@android:style/Widget.Material.TextView">
+        <item name="android:lineSpacingMultiplier">@dimen/text_line_spacing</item>
+    </style>
+
+    <style name="Widget.HalloBunda.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_icon_tint</item>
+        <item name="android:textColor">@color/bottom_nav_text_color</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="itemBackground">@color/bottom_nav_background</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/bottom_nav_elevation</item>
+        <item name="badgeColor">?colorAccent</item>
+        <item name="badgeRadius">3dp</item>
+    </style>
+
+    <style name="Widget.HalloBunda.CollapsingHeader" parent="@style/Widget.Design.CollapsingToolbar">
+        <item name="scrimAnimationDuration">200</item>
+        <item name="scrimVisibleHeightTrigger">130dp</item>
+        <item name="statusBarScrim">@null</item>
+        <item name="titleEnabled">false</item>
+    </style>
+
+    <style name="Widget.HalloBunda.PxRegister" parent="@style/Widget.AppCompat.Button.Small">
+        <item name="android:background">@drawable/background_register</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.HalloBunda.Login" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:background">@drawable/session_login</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.HalloBunda.Login.Account" parent="Widget.HalloBunda.Login">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.HalloBunda.ChangePassword" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:background">@drawable/session_login</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.HalloBunda.Logout" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:background">@drawable/session_logout</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.HalloBunda.Register" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:background">@drawable/session_register</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.HalloBunda.AccItem" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.HalloBunda.Version">
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ThemeOverlay.DarkToolbar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="ThemeOverlay.LightToolbar" parent="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <style name="ThemeOverlay.ToolbarPopup" parent="@style/ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="android:tint">@color/app_white</item>
+        <item name="android:textColorSecondary">@color/night</item>
+    </style>
+
+    <style name="Theme.HalloBunda.Title" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="ContentEmpty" parent="Theme.HalloBunda.Title">
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">start</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+    </style>
+
+    <!-- Notice Card -->
+    <style name="NoticeDesc" parent="Theme.HalloBunda.Title">
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">start</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+    </style>
+    <!-- End Notice Card -->
+
+    <!-- Splash -->
+    <style name="SplashTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_xxlarge</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="SplashTagLine" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_2</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="SplashCopyright" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/dark_night</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <!-- General -->
+    <style name="GenHero" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+    </style>
+
+    <style name="GenTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+    </style>
+
+    <!-- Profile -->
+    <style name="ProfileHeader" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="ProfileHint" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="ProfileName" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="textAllCaps">true</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="ProfileAddress" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="ProfileSubHeader" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <!-- History Item-->
+    <style name="HistoryHeader" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="HistorySubHeader" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="HistoryDueDate" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="ReadMoreBadge">
+        <item name="android:background">@drawable/read_more_background</item>
+        <item name="android:backgroundTint">@color/reddish</item>
+        <item name="android:drawableLeft">@drawable/ic_chevron_right</item>
+        <item name="android:drawablePadding">@dimen/spacing_micro</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:text">@string/more</item>
+        <item name="android:textAppearance">@style/TextAppearance.H5</item>
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
+
+    <!-- Review -->
+    <style name="Review">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Review.Name" parent="Review">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Review.Feedback" parent="Review">
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textColor">@color/body_text_2</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Doctor -->
+    <style name="Service">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Service.Name" parent="">
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!--Surgery-->
+    <style name="Surgery" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textColor">@color/body_text_1</item>
+    </style>
+
+    <style name="Surgery.Date" parent="Surgery">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Surgery.Poli" parent="@style/TextAppearance.H1">
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/body_text_1</item>
+    </style>
+
+    <style name="Surgery.Doctor" parent="Surgery">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+    </style>
+
+    <style name="Surgery.Medtreatment" parent="Surgery">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+    </style>
+
+    <style name="Surgery.BookingCode" parent="Surgery">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Surgery.PxCat" parent="Surgery">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+    </style>
+
+    <!-- TOS Hospital Select-->
+    <style name="TOSHospitalHeader" parent="">
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TOSHospitalSubHeader" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <!-- Ticket-->
+    <style name="TicketHeader" parent="">
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TicketSubHeader" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="TicketPoliName" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+    </style>
+
+    <style name="TicketPoliNumber" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_ticket</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+    </style>
+
+    <style name="TicketPxCat" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="TicketBadge" parent="">
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_xsmall</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="TicketBookingCode" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="TicketDate" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="TicketEstimate" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="TicketCancelButton" >
+        <item name="android:background">@drawable/session_cancel</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Inbox -->
+    <style name="Inbox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical|start</item>
+    </style>
+
+    <style name="InboxContent" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="InboxDueDate" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <!-- About -->
+    <style name="AboutTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textAlignment">viewStart</item>
+        <!-- The activity title is set to string used for the welcome title, so to avoid the text
+     being repeated as the user selects the next item, it is removed from accessibility -->
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <style name="AboutDesc" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_2</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+    <style name="AboutCopyright" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="AboutVersion" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <!-- End About -->
+
+    <!-- Alert -->
+    <style name="HAlert">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="HAlert.Header">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/app_text_size_xlarge</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+    <style name="HAlert.Message">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <!-- Holiday -->
+    <style name="Holiday">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical|start</item>
+    </style>
+
+    <style name="Holiday.Description">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="Holiday.Date" >
+        <item name="android:textColor">@color/theme_accent_2</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Holiday.Title" >
+        <item name="android:textColor">@color/theme_accent_2</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- End Holiday -->
+
+    <!-- Login -->
+    <style name="Login">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Login.HeaderText">
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+    </style>
+
+    <style name="Login.HeaderText.NoMode">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Login.EditText">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:backgroundTint">@color/text_on_primary</item>
+    </style>
+
+    <!-- End Login -->
+
+    <style name="TextAppearance.ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textColor">@color/night</item>
+    </style>
+
+    <style name="Schedule.ItemTitle" parent="@style/TextAppearance.H1">
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/body_text_1</item>
+    </style>
+
+    <style name="Schedule.TimeHint" parent="@style/TextAppearance.H5">
+        <item name="android:textAppearance">@dimen/app_text_size_small</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Schedule.Day" parent="@style/TextAppearance.H5">
+        <item name="android:textAppearance">@dimen/app_text_size_small</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Schedule.Quota" parent="@style/TextAppearance.H5">
+        <item name="android:textAppearance">@dimen/app_text_size_small</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Schedule.ItemTitle.Break">
+        <item name="fontPath">fonts/productsans_italic.ttf</item>
+    </style>
+
+    <style name="Schedule.DisableServices" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/reddish</item>
+    </style>
+
+    <!-- Home -->
+    <style name="Home.Welcome" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/night</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="Home.Client" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">true</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+    </style>
+
+    <style name="Home.Company" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/greyish_brown</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <!-- DAC -->
+    <style name="Dac.Title" parent="">
+        <item name="android:textSize">@dimen/app_text_size_xlarge</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/robotoslab_bold.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/off_white</item>
+    </style>
+
+    <style name="Dac.Subtitle" parent="">
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/robotoslab_bold.ttf</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="Dac.Code" parent="">
+        <item name="android:textStyle">bold</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/gold</item>
+    </style>
+
+    <style name="Dac.Desc" parent="">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textColor">@color/off_white</item>
+    </style>
+
+    <style name="Dac.Date" parent="">
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/body_text_2</item>
+    </style>
+
+    <!-- Job Order Sheet -->
+    <style name="Jos.Title" parent="">
+        <item name="android:textSize">@dimen/app_text_size_xlarge</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/robotoslab_bold.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/lighter_grey</item>
+    </style>
+
+    <style name="Jos.Subtitle" parent="">
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/robotoslab_bold.ttf</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/lighter_grey</item>
+    </style>
+
+    <style name="Jos.Desc" parent="">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textColor">@color/off_white</item>
+    </style>
+
+    <style name="Jos.Code" parent="">
+        <item name="android:textStyle">bold</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/off_white</item>
+    </style>
+
+    <style name="Jos.Date" parent="">
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
+
+    <!-- Client -->
+    <style name="Client.Title" parent="">
+        <item name="android:textSize">@dimen/app_text_size_xlarge</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/robotoslab_bold.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/off_white</item>
+    </style>
+
+    <style name="Client.Subtitle" parent="">
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/robotoslab_bold.ttf</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="Client.Code" parent="">
+        <item name="android:textStyle">bold</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/gold</item>
+    </style>
+
+    <style name="Client.Desc" parent="">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textColor">@color/body_text_2</item>
+    </style>
+
+    <style name="Client.Date" parent="">
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/body_text_2</item>
+    </style>
+
+    <!-- PX Registration -->
+    <style name="Registration.Title" parent="">
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Registration.Subtitle" parent="">
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="Registration.AgreeTerm" parent="">
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+    </style>
+
+    <style name="Registration.Info" parent="">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="Registration.TimeHint" parent="">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="Registration.Quota" parent="">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="Registration.QuotaRemaining" parent="">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="fontPath">fonts/productsans_bold.ttf</item>
+        <item name="background">@color/colorAccent</item>
+        <item name="android:textColor">@color/off_white</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="hero">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="hero.headerText">
+        <item name="android:textColor">@color/dark_night</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="hero.headerText.NoMode">
+        <item name="android:textColor">@color/dark_night</item>
+    </style>
+
+    <!--df dialog-->
+
+    <style name="viewParent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="viewParent.headerText">
+        <item name="android:textColor">@color/dark_night</item>
+        <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="viewParent.headerText.NoMode">
+        <item name="android:textColor">@color/dark_night</item>
+    </style>
+
+    <style name="parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="modifiedEditText" parent="parent">
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:backgroundTint">@color/text_on_primary</item>
+    </style>
+
+    <!-- Home -->
+    <style name="Hero.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/body_text_2</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Hero.WelcomeName" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">true</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="Hero.WelcomeNip" parent="">
+        <item name="android:textColor">@color/off_white</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="Hero.Name" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="Hero.Nip" parent="">
+        <item name="android:textColor">@color/body_text_2</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+    </style>
+
+    <style name="Hero.Jabatan" parent="">
+        <item name="android:textColor">@color/reddish</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontPath">fonts/productsans_regular.ttf</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+</resources>

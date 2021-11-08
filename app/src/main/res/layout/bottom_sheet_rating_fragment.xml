@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/padding_normal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="56dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="@color/grey_color"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingBottom="@dimen/padding_normal">
+
+            <com.rsbunda.myenviro.ui.widget.BezelImageView
+                android:id="@+id/doctor_image"
+                android:layout_width="@dimen/navdrawer_profile_image_size"
+                android:layout_height="@dimen/navdrawer_profile_image_size"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_envihero"
+                app:maskDrawable="@drawable/circle_mask"
+                android:visibility="visible"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/doctor_content"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/poli_name"
+                    style="@style/Registration.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_normal"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:gravity="center|start"
+                    tools:text="Poli Mata" />
+
+                <TextView
+                    android:id="@+id/doctor_name"
+                    style="@style/Registration.Subtitle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/spacing_normal"
+                    android:drawableStart="@drawable/ic_polyclinic"
+                    android:drawablePadding="@dimen/spacing_normal"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:gravity="center|start"
+                    tools:text="dr Daniar" />
+
+                <TextView
+                    android:id="@+id/ticket_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_normal"
+                    android:drawableStart="@drawable/ic_book_online"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawablePadding="@dimen/spacing_normal"
+                    android:focusable="true"
+                    android:visibility="visible"
+                    tools:text="E003"
+                    android:gravity="center|start"
+                    style="@style/Registration.Subtitle"/>
+
+                <TextView
+                    android:id="@+id/time_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_normal"
+                    android:drawableStart="@drawable/ic_today"
+                    android:drawablePadding="@dimen/spacing_normal"
+                    android:focusable="true"
+                    android:gravity="center|start"
+                    android:visibility="visible"
+                    tools:text="Rabu 18:00 - Selesai"
+                    style="@style/Registration.TimeHint"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rating_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            tools:ignore="RtlSymmetry">
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:numStars="5"
+                android:rating="5"
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/rating_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_about"
+                android:gravity="center"
+                style="@style/Registration.Subtitle"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textRegisterDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal">
+                <EditText
+                    android:id="@+id/feedback_input"
+                    style="@style/modifiedEditText"
+                    android:gravity="top"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:hint="@string/tell_us_your_feedback">
+                </EditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/feedback_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="?actionBarSize"
+            android:text="@string/send_feedback"
+            android:textColor="@color/app_white"
+            android:gravity="center"
+            style="@style/Widget.HalloBunda.Login"/>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/welcome_content_width"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/welcome_content_padding"
+    tools:context="com.rsbunda.myenviro.welcome.TosFragment">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Theme.HalloBunda.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_eula" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:layout_marginTop="@dimen/padding_normal"
+        android:text="@string/eula_legal_text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:text="@string/welcome_conduct_text" />
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="@string/empty_schedule"
+        android:textColor="@color/colorPrimaryDark"
+        style="@style/ContentEmpty"
+        android:visibility="gone"/>
+
+</LinearLayout>

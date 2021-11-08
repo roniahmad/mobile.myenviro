@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:statusBarBackground="@null"
+    android:background="@color/warm_grey"
+    tools:context=".inbox.InboxDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.HalloBunda.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/transparent"
+            app:popupTheme="@style/Theme.HalloBunda.PopupOverlay" >
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.ToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_announcement_detail" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:clipToPadding="false"
+        android:paddingBottom="?actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_normal"
+            android:paddingTop="@dimen/padding_normal"
+            android:layout_marginLeft="@dimen/padding_normal"
+            android:layout_marginRight="@dimen/padding_normal">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/inbox_detail_placeholder" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_event_title"
+                    android:textAppearance="@style/Schedule.ItemTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/GenHero"
+                    tools:text="Title" />
+
+                <TextView
+                    android:id="@+id/tv_event_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InboxContent"
+                    android:text="Description" />
+
+
+                <!-- location -->
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_large">
+
+                    <ImageView
+                        android:id="@+id/img_venue_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location"
+                        android:layout_gravity="top"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_venue_name"
+                            style="@style/GenTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_normal"
+                            android:text="Venue" />
+
+                        <TextView
+                            android:id="@+id/tv_venue_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_normal"
+                            android:text="Address" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Due Date -->
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_event_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_date"
+                        android:layout_gravity="top"/>
+
+                    <TextView
+                        android:id="@+id/tv_event_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        style="@style/GenTitle"
+                        android:text="Date" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_for_more_information"
+                    android:textAppearance="@style/Schedule.ItemTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    style="@style/HistoryHeader"
+                    android:text="@string/for_more_information"/>
+
+                <!-- contact person-->
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_normal">
+
+                    <ImageView
+                        android:id="@+id/img_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_person"
+                        android:layout_gravity="top"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_cp_name"
+                            style="@style/GenTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_normal"
+                            android:text="Contact Person" />
+
+                        <TextView
+                            android:id="@+id/tv_cp_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_normal"
+                            android:text="Phone" />
+
+                        <TextView
+                            android:id="@+id/tv_cp_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_normal"
+                            android:text="Email" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

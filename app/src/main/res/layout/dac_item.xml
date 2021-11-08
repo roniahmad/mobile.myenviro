@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2020 RS Bunda.
+  Developer Info:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_normal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_date"
+                style="@style/Client.Subtitle"/>
+
+            <TextView
+                android:id="@+id/dac_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="1 September 2021"
+                style="@style/Dac.Date"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/end_date"
+                style="@style/Client.Subtitle"/>
+
+            <TextView
+                android:id="@+id/dac_end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="1 September 2022"
+                style="@style/Client.Date"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="@string/duration"
+        style="@style/Client.Subtitle"/>
+
+    <TextView
+        android:id="@+id/dac_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="1 September 2022"
+        style="@style/Client.Desc"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="@string/task"
+        style="@style/Client.Subtitle"/>
+
+    <TextView
+        android:id="@+id/dac_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="1 September 2022"
+        style="@style/Client.Desc"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

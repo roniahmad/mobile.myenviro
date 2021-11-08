@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018 Airschedule. All rights reserved.
+
+  -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".settings.SettingsActivity">
+    <!--
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.HalloBunda.Settings">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/transparent"
+            app:popupTheme="@style/Theme.HalloBunda.PopupOverlay" >
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.ToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_settings" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    -->
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"/>
+    <!--
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/about_scrolling_content"
+        android:layout_width="@dimen/main_content_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|top"
+        android:background="@color/content_background"
+        android:clipToPadding="false"
+        android:elevation="@dimen/card_elevation"
+        android:paddingBottom="?actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+        <LinearLayout
+            android:id="@+id/settings_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_normal"
+            android:paddingTop="@dimen/padding_normal"
+            tools:ignore="RtlSymmetry">
+
+
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    -->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

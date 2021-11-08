@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2019 RS Bunda Surabaya. All rights reserved.
+
+  -->
+
+<!-- Dimensions common among all features in the app. -->
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- standard metrics -->
+    <dimen name="spacing_normal">8dp</dimen>
+    <dimen name="spacing_micro">4dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_normal_button">12dp</dimen>
+    <dimen name="spacing_large">32dp</dimen>
+    <dimen name="touch_raise">6dp</dimen>
+    <dimen name="extended_appbar_height">72dp</dimen>
+    <dimen name="borderless_button_margin">0dp</dimen>
+    <dimen name="main_content_width">@dimen/match_parent</dimen>
+    <dimen name="feedback_title_margin_bottom">28dp</dimen>
+    <dimen name="feedback_subtitle_margin_bottom">8dp</dimen>
+
+    <dimen name="appwidget_text_size_small">12sp</dimen>
+    <dimen name="appwidget_text_size_medium">14sp</dimen>
+    <dimen name="appwidget_text_size_large">18sp</dimen>
+
+    <dimen name="map_room_title_text_size">20sp</dimen>
+
+    <!-- App Primary Text Sizes -->
+    <dimen name="app_text_size_xsmall">11sp</dimen>
+    <dimen name="app_text_size_small">12sp</dimen>
+    <dimen name="app_text_size_medium">14sp</dimen>
+    <dimen name="app_text_size_large">18sp</dimen>
+    <dimen name="app_text_size_xlarge">20sp</dimen>
+    <dimen name="app_text_size_xxlarge">50sp</dimen>
+    <dimen name="app_text_size_xxxlarge">150sp</dimen>
+    <dimen name="app_text_size_diff_large_small">6sp</dimen>
+
+    <dimen name="app_text_size_ticket">100sp</dimen>
+
+    <!-- button -->
+    <dimen name="button_radius">5dp</dimen>
+    <dimen name="button_padding_top">4dp</dimen>
+    <dimen name="button_padding_left">4dp</dimen>
+    <dimen name="button_padding_right">4dp</dimen>
+    <dimen name="button_padding_bottom">4dp</dimen>
+
+    <!-- line spacing -->
+    <item name="text_line_spacing" format="float" type="dimen">1.2</item>
+
+    <!-- UI elements -->
+    <dimen name="a11y_min_touch_target_dimen">48dp</dimen>
+    <dimen name="action_button_min_width">56dp</dimen>
+    <dimen name="fab_touch_raise">6dp</dimen>
+    <dimen name="fab_padding">4dp</dimen>
+    <dimen name="session_details_floating_width">500dp</dimen>
+    <dimen name="session_details_floating_height">650dp</dimen>
+    <dimen name="session_details_max_header_height">144dp</dimen>
+    <integer name="reserve_inset_edge">0x50</integer> <!-- bottom -->
+    <dimen name="my_schedule_page_margin">8dp</dimen>
+    <dimen name="my_schedule_icon_size">24dp</dimen>
+    <dimen name="my_schedule_icon_horizontal_padding">24dp</dimen> <!-- center 24dp in @keyline_2 -->
+    <dimen name="widget_schedule_header_height">40dp</dimen>
+    <dimen name="drawer_width">@dimen/match_parent</dimen>
+    <dimen name="horizontal_scrollbar_height">4dp</dimen>
+    <dimen name="time_header_min_height">0dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_height_inc_padding">16dp</dimen>
+    <dimen name="divider_height_inc_padding_top_only">8dp</dimen>
+    <dimen name="divider_padding_top">7dp</dimen>
+    <dimen name="divider_padding_bottom">8dp</dimen>
+
+    <!--Placeholder-->
+    <dimen name="placeholder_text_size_xsmall">11dp</dimen>
+    <dimen name="placeholder_text_size_small">12dp</dimen>
+    <dimen name="placeholder_text_size_medium">14dp</dimen>
+    <dimen name="placeholder_text_size_large">18dp</dimen>
+    <dimen name="placeholder_text_size_xlarge">20dp</dimen>
+    <dimen name="placeholder_text_size_xxlarge">50dp</dimen>
+    <dimen name="placeholder_text_size_xxxlarge">150dp</dimen>
+    <dimen name="placeholder_text_size_diff_large_small">6dp</dimen>
+
+
+    <!-- Underconstruction -->
+    <dimen name="underconstruction_profile_image_size">116dp</dimen>
+
+    <dimen name="maskot_image_size">116dp</dimen>
+    <dimen name="splash_image_size">116dp</dimen>
+
+    <dimen name="qrcode_image_size">256dp</dimen>
+
+    <!-- Report Images -->
+    <dimen name="report_image_width">240dp</dimen>
+    <dimen name="report_image_height">320dp</dimen>
+
+    <!--Profile-->
+    <dimen name="navdrawer_profile_image_size">56dp</dimen>
+    <dimen name="navdrawer_item_icon_size">24dp</dimen>
+    <dimen name="navdrawer_header_icon_margin_top">25dp</dimen>
+    <dimen name="navdrawer_logo_vertical_padding">16dp</dimen>
+    <dimen name="navdrawer_logo_padding_right">16dp</dimen>
+
+    <!-- My I/O -->
+    <dimen name="my_io_dialog_avatar_dimen">40dp</dimen>
+    <dimen name="my_io_dialog_check_circle_dimen">24dp</dimen>
+    <dimen name="my_io_toolbar_avatar_margin">4dp</dimen>
+
+    <!-- Explore I/O Feature -->
+    <dimen name="explore_io_message_card_image_width">56dp</dimen>
+    <dimen name="explore_io_message_card_min_button_width">48dp</dimen>
+    <dimen name="explore_io_keynote_card_padding_top">16dp</dimen>
+    <dimen name="explore_io_keynote_card_padding_bottom">16dp</dimen>
+    <dimen name="explore_io_keynote_card_padding_start">16dp</dimen>
+    <dimen name="explore_io_keynote_card_padding_end">16dp</dimen>
+    <dimen name="explore_io_keynote_card_desc_padding">4dp</dimen>
+
+    <dimen name="explore_grid_padding">4dp</dimen>
+    <dimen name="explore_topic_card_header_height">112dp</dimen>
+    <dimen name="track_header_detail_height">168dp</dimen>
+    <dimen name="compact_list_tile">168dp</dimen>
+
+    <item name="aspect_16_9" format="float" type="dimen">1.7778</item>
+
+    <!-- Feed Feature -->
+    <dimen name="feed_message_card_image_width">90dp</dimen>
+
+    <!-- body content -->
+    <dimen name="element_spacing_normal">8dp</dimen>
+    <dimen name="content_padding_normal">16dp</dimen>
+    <dimen name="content_padding_dialog">24dp</dimen>
+
+    <dimen name="speaker_image_size">56dp</dimen>
+
+    <!-- Widget -->
+    <dimen name="widget_margin">0dp</dimen>
+
+    <!-- Map -->
+    <dimen name="map_slideableinfo_height_titleonly">80dp</dimen>
+    <dimen name="map_slideableinfo_height_venue">120dp</dimen>
+    <dimen name="map_slideableinfo_height_session">100dp</dimen>
+    <dimen name="map_info_item_height">72dp</dimen>
+
+    <dimen name="butter_bar_height">64dp</dimen>
+
+    <dimen name="keyline_1">16dp</dimen>
+    <dimen name="keyline_1_minus_8dp">8dp</dimen>
+    <dimen name="keyline_2">72dp</dimen>
+    <dimen name="keyline_2_session_detail">@dimen/keyline_2</dimen>
+
+    <dimen name="session_detail_speaker_left_offset">@dimen/keyline_1</dimen>
+
+    <dimen name="appbar_elevation">4dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="bottom_nav_elevation">8dp</dimen>
+
+    <dimen name="a11y_min_touch_target">48dp</dimen>
+
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="bottom_sheet_elevation">8dp</dimen>
+    <dimen name="bottom_sheet_corner_radius">16dp</dimen>
+    <dimen name="bottom_sheet_peek_height">@dimen/a11y_min_touch_target</dimen>
+
+    <dimen name="stream_card_corner_radius">0dp</dimen>
+    <dimen name="card_corner_radius">5dp</dimen>
+    <dimen name="jos_card_corner_radius">10dp</dimen>
+
+    <!-- Social -->
+    <dimen name="social_icon_size">24dp</dimen>
+    <dimen name="social_icon_box_size">48dp</dimen>
+    <dimen name="social_icon_box_padding">12dp</dimen>
+
+    <!-- feedback -->
+    <dimen name="feedback_rate_padding_top">16dp</dimen>
+
+    <!-- per https://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html#MATCH_PARENT -->
+    <item name="match_parent" format="integer" type="dimen">-1</item>
+
+    <!-- Introduction Activity -->
+    <dimen name="welcome_logo_top_spacing">48dp</dimen>
+    <dimen name="welcome_logo_height">112dp</dimen>
+    <!-- welcome_logo_top_spacing + welcome_logo_height + 40dp (logo bottom spacing) -->
+    <dimen name="welcome_title_size">20sp</dimen>
+
+    <!-- Welcome Activity -->
+    <dimen name="welcome_content_padding_top">40dp</dimen>
+    <dimen name="welcome_content_padding">@dimen/padding_normal</dimen>
+    <dimen name="welcome_content_title_margin">20dp</dimen>
+    <dimen name="welcome_button_bar_elevation">6dp</dimen>
+    <dimen name="welcome_content_width">@dimen/match_parent</dimen>
+
+    <!-- Info -->
+<!--    <dimen name="event_header_height">140dp</dimen>-->
+<!--    <dimen name="event_button_margin">4dp</dimen>-->
+<!--    <dimen name="settings_content_padding">32dp</dimen>-->
+
+    <!-- BottomNavigationView-->
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">@dimen/app_text_size_xsmall</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">13sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="headerTextSize">25sp</dimen>
+    <dimen name="newsMoreTextSize">12sp</dimen>
+    <dimen name="loginViewsMargin">20dp</dimen>
+
+    <!-- Login -->
+    <dimen name="login_image_height">72dp</dimen>
+    <dimen name="login_image_width">72dp</dimen>
+
+    <!-- Splash -->
+    <dimen name="splash_image_height">144dp</dimen>
+    <dimen name="splash_image_width">144dp</dimen>
+
+    <dimen name="rating_image_size">18dp</dimen>
+
+    <dimen name="poly_card_height">160dp</dimen>
+
+    <!-- Control Panel -->
+    <dimen name="cp_image_height">72dp</dimen>
+    <dimen name="cp_image_width">72dp</dimen>
+
+    <dimen name="bottomsheet_button_width">120dp</dimen>
+    <dimen name="bottomsheet_button_height">120dp</dimen>
+
+</resources>

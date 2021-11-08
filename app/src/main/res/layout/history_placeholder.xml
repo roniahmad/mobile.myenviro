@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp">
+
+        <RelativeLayout
+            android:id="@+id/time_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/date_content"
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/placeholder_bg"
+                android:layout_margin="@dimen/card_margin"
+                android:elevation="@dimen/card_elevation"
+                card_view:cardCornerRadius="@dimen/card_corner_radius">
+
+                <LinearLayout
+                    android:id="@+id/date_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+
+                    <View
+                        android:id="@+id/pxreg_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_small"
+                        android:background="@color/placeholder_fg"
+                        android:layout_margin="@dimen/spacing_micro"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/placeholder_fg"/>
+
+                    <View
+                        android:id="@+id/date_visit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_margin="@dimen/spacing_micro"
+                        android:background="@color/placeholder_fg"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/info_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="@dimen/card_elevation"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+            android:background="@color/placeholder_bg">
+
+            <LinearLayout
+                android:id="@+id/info_container"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_normal">
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_poli"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cached"
+                        android:tint="@color/placeholder_fg"/>
+
+                    <View
+                        android:id="@+id/poli_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_xlarge"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/placeholder_fg"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_doctor_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cached"
+                        android:tint="@color/placeholder_fg"/>
+
+                    <View
+                        android:id="@+id/doctor_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/placeholder_fg"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/placeholder_fg"
+                    android:layout_marginTop="@dimen/spacing_micro"
+                    android:layout_marginBottom="@dimen/spacing_micro"/>
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cached"
+                        android:tint="@color/placeholder_fg"/>
+
+                    <View
+                        android:id="@+id/ticket_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/placeholder_text_size_medium"
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/placeholder_fg" />
+
+                </LinearLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="@dimen/spacing_micro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/info_container" >
+
+                    <View
+                        android:id="@+id/feedback_button"
+                        android:layout_width="80dp"
+                        android:layout_height="@dimen/placeholder_text_size_xlarge"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/padding_normal"
+                        android:layout_marginRight="@dimen/padding_normal"
+                        android:background="@color/placeholder_fg"/>
+
+                </RelativeLayout >
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</FrameLayout>

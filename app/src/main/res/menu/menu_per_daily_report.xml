@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item-->
+<!--        android:id="@+id/daily_report_edit"-->
+<!--        android:icon="@drawable/ic_description"-->
+<!--        android:title="@string/menu_item_edit"/>-->
+
+    <item
+        android:id="@+id/daily_report_share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/menu_item_share"/>
+</menu>

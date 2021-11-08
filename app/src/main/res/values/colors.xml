@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C0ED72</color>
+    <color name="colorPrimaryDark">#43b400</color>
+    <color name="colorAccent">#2178b6</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#99000000</color>
+    <color name="placeholder_bg">#dadada</color>
+    <color name="placeholder_fg">#bcbcbc</color>
+
+    <color name="transparent_black">#80000000</color>
+    <color name="borders">#F1EFF2</color>
+    <color name="black">#000000</color>
+    <color name="night">#322D32</color>
+    <color name="dark_night">#090609</color>
+    <color name="app_green">#8BC34A</color>
+    <color name="app_gray">#bcbcbc</color>
+    <color name="app_white">#FFFFFF</color>
+    <color name="yellow">#FFEB6B</color>
+    <color name="green">#C0ED72</color>
+    <color name="blue">#ADD8FF</color>
+    <color name="pink">#FFB0CA</color>
+    <color name="gray_text">#B6B6B6</color>
+    <color name="red">#ff0000</color>
+    <color name="text_color">#767676</color>
+    <color name="white">#FFFFFF</color>
+    <color name="underline">#F02814</color>
+    <color name="grey_color">#a8a8a8</color>
+    <color name="map_icon">#ffb4b4b4</color>
+    <color name="contact_icon">#ffb4b4b4</color>
+    <color name="background">#ffffffff</color>
+    <color name="content_background">@null</color>
+    <color name="profile_background">#fff</color>
+
+    <!-- 2017 palette -->
+    <color name="lightish_blue">#536dfe</color>
+    <color name="lightish_blue_a11y">#4a5cfe</color>
+    <color name="lighter_blue">#8799ff</color>
+    <color name="aqua_marine">#1ce8b5</color>
+    <color name="aqua_marine_90">#e51ce8b5</color>
+    <color name="neon_blue">#00e4ff</color>
+    <color name="sunflower_yellow">#ffd500</color>
+    <color name="light_periwinkle">#bcc8fb</color>
+    <color name="warm_grey">#f8f8f8</color>
+    <!--
+    <color name="warm_grey">#9b9b9b</color>
+    -->
+    <color name="greyish_brown">#424242</color>
+    <color name="links">#4151fd</color>
+    <color name="dark_icon">#b3000000</color>
+    <color name="light_grey">#ffeeeeee</color>
+    <color name="lighter_grey">#f6f6f6</color>
+    <color name="reddish">#d32f2f</color>
+    <color name="carnation_pink">#ff80ab</color>
+    <color name="light_salmon">#ffab91</color>
+    <color name="off_white">#e6e6e6</color>
+    <color name="duck_egg_blue">#b2ebf2</color>
+    <color name="light_yellowish_green">#ccff90</color>
+    <color name="gold">#FFD700</color>
+
+    <!-- pallete other-->
+    <color name="dark_status_bar">#ff949595</color>
+    <color name="immersive_status_bar">#33000000</color>
+    <color name="immersive_status_bar_dark">#66000000</color>
+
+    <color name="button">#3f4652</color>
+    <color name="button_dark">#272c33</color>
+
+    <color name="divider">@color/off_white</color>
+
+    <color name="tab_selected_strip">@android:color/white</color>
+
+    <!-- App Primary Text Colors -->
+    <color name="body_text_1">#de000000</color>
+    <color name="body_text_2">#8a000000</color>
+    <color name="body_text_disabled">#44000000</color>
+
+    <color name="flat_button_text">#ff0097a7</color>
+    <color name="text_on_primary">#ff004446</color>
+    <color name="about_link">#ff00a7b6</color>
+
+    <color name="signup_button_background">#00000000</color>
+    <color name="signup_button_text">#0288D1</color>
+
+    <color name="forgot_button_background">#00000000</color>
+    <color name="forgot_button_text">#e91e63</color>
+
+    <color name="refresh_progress_1">#e91e63</color>
+    <color name="refresh_progress_2">#fbbc05</color>
+    <color name="refresh_progress_3">#34a853</color>
+
+    <!--bottom navigation-->
+    <color name="bottom_nav_icon_tint">@color/white</color>
+    <color name="bottom_nav_text_color">@color/white</color>
+    <color name="bottom_nav_background">@color/colorPrimaryDark</color>
+
+    <!-- Session Detail colors. -->
+    <color name="session_detail_tag_text">@color/session_detail_interactive_element</color>
+    <color name="fab_not_in_schedule">@color/lightish_blue</color>
+    <color name="fab_in_schedule">@android:color/white</color>
+    <color name="fab_press_ripple">#1a000000</color>
+    <color name="session_tag_stroke">#80546e7a</color>
+    <color name="session_tag_stroke_focused">#888</color>
+    <color name="speaker_social_link">@color/session_detail_interactive_element</color>
+    <color name="session_detail_interactive_element">#ff546e7a</color>
+
+    <color name="text_primary_light">@color/greyish_brown</color>
+    <color name="text_primary_light_disabled">#42424242</color>
+
+    <color name="theme_primary">@color/colorPrimary</color>
+    <color name="theme_primary_dark">#3C53BB</color>
+
+    <color name="theme_accent_1">#00b0ff</color>
+    <color name="theme_accent_2">#e91e63</color>
+
+    <!--colors for light mode-->
+
+    <color name="themeColor">#11CFC5</color>
+
+    <!--normal colors-->
+    <color name="register_background_color">#11CFC5</color>
+    <color name="login_background_color">#fff</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">#11CFC5</color>
+
+</resources>

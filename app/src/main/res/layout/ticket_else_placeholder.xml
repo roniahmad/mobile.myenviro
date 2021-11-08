@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/padding_normal"
+    android:paddingTop="@dimen/padding_normal"
+    android:paddingBottom="@dimen/padding_normal">
+
+    <View
+        android:id="@+id/poli_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/placeholder_text_size_xlarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingEnd="@dimen/padding_normal"
+        android:background="@color/placeholder_fg"/>
+
+    <LinearLayout
+        android:id="@+id/doctor_block"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_micro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/poli_name">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cached"
+            android:tint="@color/placeholder_fg"
+            android:layout_gravity="top"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/placeholder_text_size_medium"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:background="@color/placeholder_fg"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/time_block"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_micro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doctor_block">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cached"
+            android:tint="@color/placeholder_fg"
+            android:layout_gravity="top"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/placeholder_text_size_medium"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:background="@color/placeholder_fg"/>
+
+    </LinearLayout>
+
+    <!-- contact person-->
+    <LinearLayout
+        android:id="@+id/px_block"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_micro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_block">
+
+        <ImageView
+            android:id="@+id/img_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cached"
+            android:tint="@color/placeholder_fg"
+            android:layout_gravity="top"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/px_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/placeholder_text_size_medium"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:background="@color/placeholder_fg"/>
+
+            <View
+                android:id="@+id/px_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/placeholder_text_size_medium"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:background="@color/placeholder_fg"
+                android:layout_marginTop="@dimen/spacing_micro"/>
+
+            <View
+                android:id="@+id/px_nik"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/placeholder_text_size_medium"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:background="@color/placeholder_fg"
+                android:layout_marginTop="@dimen/spacing_micro"/>
+
+            <View
+                android:id="@+id/poli_ticket_no"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/placeholder_text_size_medium"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:background="@color/placeholder_fg"
+                android:layout_marginTop="@dimen/spacing_micro"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pxcat_block"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_micro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/px_block">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cached"
+            android:tint="@color/placeholder_fg"
+            android:layout_gravity="top"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/placeholder_text_size_medium"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:background="@color/placeholder_fg"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/button_cancel"
+        android:layout_width="@dimen/a11y_min_touch_target_dimen"
+        android:layout_height="@dimen/a11y_min_touch_target_dimen"
+        android:layout_marginEnd="@dimen/spacing_micro"
+        android:contentDescription="@string/add_bookmark"
+        android:scaleType="center"
+        android:src="@drawable/ic_delete_accent"
+        android:tint="@color/placeholder_fg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pxcat_block" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

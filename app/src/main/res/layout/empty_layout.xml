@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2019 PT Permata Bunda Bersama
+  Developer:
+  Roni Ahmad
+  roni.connect@gmail.com
+  +6287781289268
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/empty_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="@dimen/maskot_image_size"
+        android:layout_height="@dimen/maskot_image_size"
+        android:scaleType="fitCenter"
+        android:transitionName="@string/transition_session_image"
+        android:src="@drawable/ic_envihero"
+        tools:ignore="ContentDescription"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="@string/empty_schedule"
+        android:textColor="@color/body_text_1"
+        style="@style/ContentEmpty"/>
+
+</LinearLayout>
+
