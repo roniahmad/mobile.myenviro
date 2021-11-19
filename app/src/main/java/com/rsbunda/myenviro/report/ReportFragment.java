@@ -2,12 +2,14 @@ package com.rsbunda.myenviro.report;
 
 import static com.rsbunda.myenviro.constant.CommonConstant.CONST_JOS_CLIENT_ID;
 import static com.rsbunda.myenviro.constant.CommonConstant.CONST_JOS_ID;
+import static com.rsbunda.myenviro.util.LogUtils.LOGD;
 import static com.rsbunda.myenviro.util.LogUtils.LOGE;
 import static com.rsbunda.myenviro.util.LogUtils.makeLogTag;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -19,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,13 +33,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.textfield.TextInputLayout;
 import com.rsbunda.myenviro.R;
 import com.rsbunda.myenviro.io.HalloGenerator;
 import com.rsbunda.myenviro.io.HalloService;
 import com.rsbunda.myenviro.io.model.cleaning.DailyReport;
 import com.rsbunda.myenviro.io.model.cleaning.DailyReportData;
+import com.rsbunda.myenviro.io.model.cleaning.DailyReportDetail;
+import com.rsbunda.myenviro.io.model.cleaning.DailyReportDetailData;
 import com.rsbunda.myenviro.io.model.cleaning.DailyReportImages;
 import com.rsbunda.myenviro.io.model.cleaning.DailyReportImagesData;
+import com.rsbunda.myenviro.io.response.DailyReportResponse;
 import com.rsbunda.myenviro.util.LoginUtils;
 import com.rsbunda.myenviro.util.TimeUtils;
 import com.rsbunda.myenviro.util.UIUtils;
@@ -64,8 +71,10 @@ public class ReportFragment extends Fragment
 
     private Handler mHandler = new Handler();
 
-    private List<DailyReport> mListDailyReport;
+    private List<DailyReportDetail> mListDailyReportDetail;
     private List<DailyReportImages> mListDailyReportImages;
+    private List<DailyReport> mListDailyReport;
+
     private RecyclerView mRecyclerView;
     private ReportAdapter mViewAdapter;
 
@@ -81,8 +90,20 @@ public class ReportFragment extends Fragment
 
     private ProgressBar mProgressBar;
     private View mViewEmptyContainer;
+    private View mViewNoteContainer;
+
+    private View mViewNotes;
+    private View mViewButtonRec;
+    private ImageButton mBtnToggle;
+    private TextInputLayout mTilRecommendation, mTilFeedback;
+    private EditText mEdRecommendation;
+    private EditText mEdFeedback;
+    private boolean isExpanded;
+
+    private Button mBtnFeedback;
 
     private String mDateReportString;
+    private String mClientFeedback;
 
     private int mJosId;
     private String mJosClientId;
@@ -213,23 +234,187 @@ public class ReportFragment extends Fragment
 
         mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         mViewEmptyContainer = (View) view.findViewById(R.id.empty_container);
+        mViewNoteContainer  = (View) view.findViewById(R.id.notes_container);
+
+        mViewNotes = (View) view.findViewById(R.id.notes_header);
+        mViewButtonRec = (View) view.findViewById(R.id.feedback_button_container);
+        mBtnToggle = (ImageButton) view.findViewById(R.id.btn_toggle);
+        isExpanded = false;
+
+        mBtnFeedback = (Button) view.findViewById(R.id.feedback_link);
+
+        mTilRecommendation = (TextInputLayout) view.findViewById(R.id.til_recommendation);
+        mTilFeedback = (TextInputLayout) view.findViewById(R.id.til_feedback);
+
+        mEdRecommendation = (EditText) view.findViewById(R.id.ed_recommendation);
+        mEdFeedback = (EditText) view.findViewById(R.id.ed_feedback);
 
         mTxtEmpty = (TextView) view.findViewById(R.id.tv_empty);
         UIUtils.setTextMaybeHtml(mTxtEmpty, mContext.getString(R.string.empty_report));
 
-        mListDailyReport = Collections.EMPTY_LIST;
+        mListDailyReportDetail = Collections.EMPTY_LIST;
         mListDailyReportImages = Collections.EMPTY_LIST;
+        mListDailyReport = Collections.EMPTY_LIST;
 
         mDateReportString = StringUtils.EMPTY;
+        mClientFeedback = StringUtils.EMPTY;
 
     }
 
     private  void initListeners(){
-        //TODO
+        mViewNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                isExpanded = !isExpanded;
+
+                mTilFeedback.setVisibility(isExpanded? View.VISIBLE : View.GONE);
+                mTilRecommendation.setVisibility(isExpanded? View.VISIBLE : View.GONE);
+                mViewButtonRec.setVisibility(isExpanded? View.VISIBLE : View.GONE);
+
+
+                Drawable icdown = mContext.getResources().getDrawable(R.drawable.ic_keyboard_arrow_down);
+                Drawable icup = mContext.getResources().getDrawable(R.drawable.ic_keyboard_arrow_up);
+
+                mBtnToggle.setImageDrawable(isExpanded ? icup : icdown);
+
+
+            }
+        });
+
+        mBtnFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addFeedback();
+            }
+        });
+
+    }
+
+    private void addFeedback(){
+
+        if(mJosId!=0){
+
+            if(mListDailyReportDetail.size()>0){
+
+                DailyReportDetail model = (DailyReportDetail) mListDailyReportDetail.get(0);
+                final int josid = mJosId;
+                final int darid = model.getLaporanDacId();
+                final String token = "Bearer "+LoginUtils.getUserToken(mContext);
+
+                final String recommendation = mEdFeedback.getText().toString().trim();
+                mClientFeedback = recommendation;
+
+                mProgressBar.setVisibility(View.VISIBLE);
+
+                LOGD(TAG, "Add New Daily Report Recommendation");
+
+                HalloService service = HalloGenerator.createService(HalloService.class, token, mContext);
+                Call<DailyReportResponse> call = service.addNewDailyReportFeedback(token, darid, josid, recommendation);
+                call.enqueue(new Callback<DailyReportResponse>() {
+                    @Override
+                    public void onResponse(Call<DailyReportResponse> call, Response<DailyReportResponse> response) {
+                        if(response.isSuccessful()){
+                            mProgressBar.setVisibility(View.GONE);
+                            final int success = response.body().getSuccess();
+                            final String msg = response.body().getMessage();
+
+                            Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+
+                        }else{
+                            LOGE(TAG, response.toString());
+                            mProgressBar.setVisibility(View.GONE);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<DailyReportResponse> call, Throwable t) {
+                        LOGE(TAG, t.getMessage());
+                        mProgressBar.setVisibility(View.GONE);
+                    }
+                });
+
+            }else{
+                Toast.makeText(mContext, mContext.getString(R.string.empty_daily_report), Toast.LENGTH_SHORT).show();
+            }
+
+
+        }else{
+            Toast.makeText(mContext, mContext.getString(R.string.job_order_sheet_empty), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void loadRecommendationToCompany() {
+        if(mJosId!=0){
+
+            if(mListDailyReportDetail.size()>0){
+
+
+                DailyReportDetail model = (DailyReportDetail) mListDailyReportDetail.get(0);
+
+                final int josid = mJosId;
+                final int darid = model.getLaporanDacId();
+                final String token = "Bearer "+LoginUtils.getUserToken(mContext);
+
+
+                mProgressBar.setVisibility(View.VISIBLE);
+
+                LOGD(TAG, "Load New Daily Report Recommendation");
+
+                HalloService service = HalloGenerator.createService(HalloService.class, token, mContext);
+                Call<DailyReportData> call = service.getdarrec(token, darid, josid);
+
+                call.enqueue(new Callback<DailyReportData>() {
+                    @Override
+                    public void onResponse(Call<DailyReportData> call, Response<DailyReportData> response) {
+                        if(response.isSuccessful()){
+                            mProgressBar.setVisibility(View.GONE);
+                            DailyReportData data = response.body();
+                            mListDailyReport = data.getDailyReport();
+                            DailyReport d = mListDailyReport.get(0);
+
+                            mEdRecommendation.setText(d.getRekomendasi());
+                            mEdFeedback.setText(d.getFeedbackKlien());
+                            final String recommendation = mEdRecommendation.getText().toString().trim();
+                            final boolean isNoRecommendation = recommendation==StringUtils.EMPTY;
+
+
+                            mViewNoteContainer.setVisibility(isNoRecommendation ? View.GONE : View.VISIBLE);
+
+                        }else{
+                            LOGE(TAG, response.toString());
+                            mProgressBar.setVisibility(View.GONE);
+
+                            mEdRecommendation.setText("");
+                            mEdFeedback.setText("");
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<DailyReportData> call, Throwable t) {
+                        LOGE(TAG, t.getMessage());
+                        mProgressBar.setVisibility(View.GONE);
+                        mEdRecommendation.setText("");
+                        mEdFeedback.setText("");
+                    }
+                });
+
+
+            }else{
+                Toast.makeText(mContext, mContext.getString(R.string.empty_daily_report), Toast.LENGTH_SHORT).show();
+            }
+
+
+        }else{
+            Toast.makeText(mContext, mContext.getString(R.string.job_order_sheet_empty), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void initState(){
         mViewEmptyContainer.setVisibility(View.GONE);
+        mViewNoteContainer.setVisibility(View.GONE);
+
         if(mJosId !=0){
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -248,7 +433,7 @@ public class ReportFragment extends Fragment
     private void loadDailyReport(){
 
         mProgressBar.setVisibility(View.VISIBLE);
-        mListDailyReport.clear();
+        mListDailyReportDetail.clear();
         mListDailyReportImages.clear();
 
         final String token = "Bearer "+ LoginUtils.getUserToken(mContext);
@@ -262,22 +447,30 @@ public class ReportFragment extends Fragment
         }
 
         HalloService service = HalloGenerator.createService(HalloService.class, token, mContext);
-        Call<DailyReportData> call = service.darbyjos(token, mJosId, mJosClientId, mDateReportString);
-        call.enqueue(new Callback<DailyReportData>() {
+        Call<DailyReportDetailData> call = service.darbyjos(token, mJosId, mJosClientId, mDateReportString);
+        call.enqueue(new Callback<DailyReportDetailData>() {
             @Override
-            public void onResponse(Call<DailyReportData> call, Response<DailyReportData> response) {
+            public void onResponse(Call<DailyReportDetailData> call, Response<DailyReportDetailData> response) {
                 mProgressBar.setVisibility(View.GONE);
                 if(response.isSuccessful()){
-                    DailyReportData data = response.body();
-                    mListDailyReport = data.getDailyReport();
+                    DailyReportDetailData data = response.body();
+                    mListDailyReportDetail = data.getDailyReport();
 
-                    final boolean isEmpty = mListDailyReport.size()<=0;
+                    final boolean isEmpty = mListDailyReportDetail.size()<=0;
                     updateEmptyView(isEmpty);
 
-                    if(mListDailyReport.size()>0){
+                    if(mListDailyReportDetail.size()>0){
                         loadDailyReportImages();
+
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                loadRecommendationToCompany();
+                            }
+                        }, HANDLER_LAUNCH_DELAY);
+
                     }else{
-                        mViewAdapter = new ReportAdapter(mContext, mListDailyReport, mListDailyReportImages, getCallbacks());
+                        mViewAdapter = new ReportAdapter(mContext, mListDailyReportDetail, mListDailyReportImages, getCallbacks());
                         mRecyclerView.setAdapter(mViewAdapter);
                     }
 
@@ -288,7 +481,7 @@ public class ReportFragment extends Fragment
             }
 
             @Override
-            public void onFailure(Call<DailyReportData> call, Throwable t) {
+            public void onFailure(Call<DailyReportDetailData> call, Throwable t) {
                 mProgressBar.setVisibility(View.GONE);
                 LOGE(TAG, t.toString());
             }
@@ -319,8 +512,8 @@ public class ReportFragment extends Fragment
                     DailyReportImagesData data = response.body();
                     mListDailyReportImages = data.getDailyReportImages();
 
-                    if(mListDailyReport.size()>0){
-                        mViewAdapter = new ReportAdapter(mContext, mListDailyReport, mListDailyReportImages, getCallbacks());
+                    if(mListDailyReportDetail.size()>0){
+                        mViewAdapter = new ReportAdapter(mContext, mListDailyReportDetail, mListDailyReportImages, getCallbacks());
                         mRecyclerView.setAdapter(mViewAdapter);
                     }
 
@@ -342,6 +535,7 @@ public class ReportFragment extends Fragment
     private void updateEmptyView(boolean isempty){
         mRecyclerView.setVisibility(isempty? View.GONE : View.VISIBLE );
         mViewEmptyContainer.setVisibility(isempty? View.VISIBLE : View.GONE);
+        mViewNoteContainer.setVisibility(isempty ? View.GONE : View.VISIBLE);
     }
 
     private ReportItemViewHolder.Callbacks getCallbacks(){
@@ -349,13 +543,18 @@ public class ReportFragment extends Fragment
     }
 
     @Override
-    public void onReportClicked(DailyReport daily) {
+    public void onReportClicked(DailyReportDetail daily) {
         //TODO
     }
 
     @Override
-    public void onReportShared(DailyReport daily) {
+    public void onReportShared(DailyReportDetail daily) {
         //TODO
+    }
+
+    @Override
+    public void onReportComplaint(DailyReportDetail daily) {
+        Toast.makeText(mContext, mContext.getString(R.string.underconstruction), Toast.LENGTH_SHORT).show();
     }
 
 

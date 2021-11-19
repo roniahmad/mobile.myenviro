@@ -76,6 +76,8 @@ public class LoginUtils {
      */
     public static final String PREF_ORGANIZATION_LOGO = PACKAGE_NAME+"pref_organization_logo";
 
+    public static final String PREF_BASE_URL = PACKAGE_NAME+"pref_base_url";
+
     /**
      * Px Information
      * */
@@ -729,6 +731,21 @@ public class LoginUtils {
     public static void setPathPoly(final Context context, String newValue) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putString (PREF_PATH_POLY, newValue).apply();
+    }
+
+    /**
+     * Return base Url.
+     *
+     * @param context Context to be used to lookup the {@link android.content.SharedPreferences}.
+     */
+    public static String getBaseUrl(final Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        return sp.getString(PREF_BASE_URL, null);
+    }
+
+    public static void setBaseUrl(final Context context, String newValue) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        sp.edit().putString (PREF_BASE_URL, newValue).apply();
     }
 
 

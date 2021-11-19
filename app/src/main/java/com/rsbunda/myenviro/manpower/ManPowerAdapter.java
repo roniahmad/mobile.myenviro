@@ -2,7 +2,6 @@ package com.rsbunda.myenviro.manpower;
 
 import android.content.Context;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,8 +40,5 @@ public class ManPowerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public int getItemCount() {
         return  mManPower.size();
     }
-
-
-
 
 }

@@ -34,14 +34,13 @@
 
         <TextView
             android:id="@+id/client_code"
-            style="@style/Client.Code"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_marginStart="@dimen/padding_normal"
             android:layout_marginEnd="@dimen/padding_normal"
             android:textAlignment="viewStart"
-            tools:text="KLN2345678" />
-
+            tools:text="KLN2345678"
+            style="@style/Client.Code"/>
 
         <LinearLayout
             android:id="@+id/jos_container"
@@ -50,7 +49,6 @@
             android:padding="@dimen/padding_normal"
             android:orientation="vertical"
             tools:ignore="RtlSymmetry">
-
 
             <TextView
                 android:layout_width="match_parent"

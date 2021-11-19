@@ -53,30 +53,12 @@
                 android:layout_gravity="center"
                 android:visibility="gone"/>
 
-            <com.facebook.shimmer.ShimmerFrameLayout
-                android:id="@+id/shimmer_view_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <include layout="@layout/inbox_detail_placeholder" />
-
-                </LinearLayout>
-
-            </com.facebook.shimmer.ShimmerFrameLayout>
-
             <LinearLayout
                 android:id="@+id/detail_block"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/tv_event_title"

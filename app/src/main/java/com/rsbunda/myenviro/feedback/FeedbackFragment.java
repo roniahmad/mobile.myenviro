@@ -23,7 +23,7 @@ import com.rsbunda.myenviro.constant.HistoryDetailConstant;
 import com.rsbunda.myenviro.history.HistoryParcel;
 import com.rsbunda.myenviro.io.HalloGenerator;
 import com.rsbunda.myenviro.io.HalloService;
-import com.rsbunda.myenviro.io.model.FeedbackResponse;
+import com.rsbunda.myenviro.io.response.FeedbackResponse;
 import com.rsbunda.myenviro.util.LogUtils;
 import com.rsbunda.myenviro.util.LoginUtils;
 import com.rsbunda.myenviro.util.TimeUtils;

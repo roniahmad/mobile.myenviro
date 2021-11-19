@@ -237,23 +237,18 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         final boolean userHasValidated = LoginUtils.hasUserValidated(mContext);
 
         String userLoggedIn = "" ;
-        String userNip = "";
+        String userCompany = "";
 
         if(userHasValidated){
-            userLoggedIn = ( userHasLogin ?  (StringUtils.isEmpty(LoginUtils.getHeroName(mContext)) ? mContext.getString(R.string.label_profile_name_na): LoginUtils.getHeroName(mContext) ) : getString(R.string.label_profile_name_na)) ;
-            userNip = ( userHasLogin ? (StringUtils.isEmpty(LoginUtils.getHeroNip(mContext))? mContext.getString(R.string.label_profile_address_na):LoginUtils.getHeroNip(mContext)) : getString(R.string.label_profile_address_na)) ;
+            userLoggedIn = ( userHasLogin ?  (StringUtils.isEmpty(LoginUtils.getHeroName(mContext)) ? mContext.getString(R.string.anonymous): LoginUtils.getHeroName(mContext) ) : getString(R.string.anonymous)) ;
+            userCompany = ( userHasLogin ? (StringUtils.isEmpty(LoginUtils.getOrganizationName(mContext))? mContext.getString(R.string.profile_address_na):LoginUtils.getOrganizationName(mContext)) : getString(R.string.profile_address_na)) ;
         }
 
-        //TODO: change later
         final int userPic = (userHasLogin? R.drawable.anonymous : R.drawable.anonymous);
-        final int color = userHasValidated ? R.color.app_white : R.color.colorAccent;
-        final boolean textAllCaps = userHasValidated ? false : true;
 
         mImageProfile.setImageResource(userPic);
         mHeroUserName.setText(userLoggedIn);
-        mHeroNip.setText(String.format(getString(R.string.your_nip),userNip));
-        mHeroNip.setTextColor(getResources().getColor(color));
-        mHeroNip.setAllCaps(textAllCaps);
+        mHeroNip.setText(userCompany);
     }
 
     private void rateMyApp(){
@@ -281,8 +276,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, mContext.getResources().getString(R.string.app_name));
-            String shareMessage= "\n"+ mContext.getResources().getString(R.string.share_header) +"\n\n";
-            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+            String shareMessage = "\n"+ mContext.getResources().getString(R.string.share_header) +"\n\n";
+            shareMessage += "\n"+ mContext.getResources().getString(R.string.share_download_at) +"\n\n";
+            shareMessage += "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, mContext.getResources().getString(R.string.title_share)));
 

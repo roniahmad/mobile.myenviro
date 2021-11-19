@@ -23,7 +23,7 @@
         android:layout_width="@dimen/navdrawer_profile_image_size"
         android:layout_height="@dimen/navdrawer_profile_image_size"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/ic_envihero"
+        app:srcCompat="@drawable/anonymous"
         app:maskDrawable="@drawable/circle_mask"
         android:layout_gravity="center"
         android:visibility="visible"/>

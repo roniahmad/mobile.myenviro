@@ -264,6 +264,32 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="Widget.HalloBunda.Button" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:background">@drawable/session_register</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.HalloBunda.SendOffer" parent="@style/Widget.AppCompat.Button.Small">
+        <item name="android:background">@drawable/session_login</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:listPreferredItemPaddingEnd</item>
+        <item name="android:paddingStart">?android:listPreferredItemPaddingStart</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal</item>
+        <item name="android:paddingTop">@dimen/spacing_normal</item>
+        <item name="android:textColor">@color/app_white</item>
+        <item name="android:textSize">@dimen/app_text_size_small</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="Widget.HalloBunda.AccItem" parent="@style/Widget.AppCompat.Button.Borderless">
         <item name="android:background">?selectableItemBackground</item>
         <item name="android:gravity">center_vertical|start</item>
@@ -278,8 +304,8 @@
 
     <style name="Widget.HalloBunda.Version">
         <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/body_text_1</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textSize">@dimen/app_text_size_small</item>
         <item name="android:gravity">center</item>
     </style>
@@ -372,7 +398,7 @@
     </style>
 
     <style name="ProfileName" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textColor">@color/body_text_1</item>
         <item name="android:textSize">@dimen/app_text_size_large</item>
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">4</item>
@@ -381,7 +407,7 @@
     </style>
 
     <style name="ProfileAddress" parent="TextAppearance.AppCompat.Subhead">
-        <item name="android:textColor">@color/button_dark</item>
+        <item name="android:textColor">@color/body_text_1</item>
         <item name="android:textSize">@dimen/app_text_size_medium</item>
         <item name="fontPath">fonts/productsans_regular.ttf</item>
     </style>
@@ -733,7 +759,7 @@
 
     <style name="Schedule.Day" parent="@style/TextAppearance.H5">
         <item name="android:textAppearance">@dimen/app_text_size_small</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/body_text_1</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textAllCaps">true</item>
@@ -741,7 +767,7 @@
 
     <style name="Schedule.Quota" parent="@style/TextAppearance.H5">
         <item name="android:textAppearance">@dimen/app_text_size_small</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/body_text_1</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textAllCaps">false</item>
@@ -903,7 +929,7 @@
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">2</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textColor">@color/gold</item>
+        <item name="android:textColor">@color/light_grey</item>
     </style>
 
     <style name="Client.Desc" parent="">
@@ -1064,7 +1090,7 @@
     </style>
 
     <style name="Hero.Jabatan" parent="">
-        <item name="android:textColor">@color/reddish</item>
+        <item name="android:textColor">@color/body_text_disabled</item>
         <item name="android:textSize">@dimen/app_text_size_small</item>
         <item name="android:textStyle">normal</item>
         <item name="fontPath">fonts/productsans_regular.ttf</item>

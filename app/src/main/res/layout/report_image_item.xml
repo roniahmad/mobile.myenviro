@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Copyright (c) 2020 RS Bunda.
-  Developer Info:
+  Developer Contact:
   Roni Ahmad
   roni.connect@gmail.com
   +6287781289268
@@ -46,11 +45,7 @@
             android:layout_centerInParent="true"
             android:text="EST: Pukul 18:40" />
 
-
-
     </RelativeLayout>
-
-
 
 </LinearLayout>
 

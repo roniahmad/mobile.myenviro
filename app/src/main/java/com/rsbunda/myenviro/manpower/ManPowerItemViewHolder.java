@@ -15,12 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.rsbunda.myenviro.R;
 import com.rsbunda.myenviro.io.model.sales.ManPowerDetil;
+import com.rsbunda.myenviro.util.LoginUtils;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class ManPowerItemViewHolder extends RecyclerView.ViewHolder{
 
@@ -74,25 +73,15 @@ public class ManPowerItemViewHolder extends RecyclerView.ViewHolder{
 //        mHeroJabatan.setText(jabatan);
         mHeroJabatan.setText(mManPower.getJabatan());
 
-        ArrayList<String> artist = new ArrayList<String>();
-        artist.add("https://akcdn.detik.net.id/community/media/visual/2020/06/23/f549e4a0-20dd-4d57-8d86-fecabe2aabb6_ori.jpeg");
-        artist.add("https://awsimages.detik.net.id/community/media/visual/2018/05/07/699f714d-231e-4632-8be7-2181a7622587_43.jpeg");
-        artist.add("https://sahabatsicepat.com/file/2021/01/wweer.jpg");
-        artist.add("https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/09/25/1850053671.jpg");
-        artist.add("https://img.inews.co.id/media/822/files/inews_new/2021/06/24/24__Manganang1_anyar.jpg");
-
         final String avatar = (StringUtils.isEmpty(mManPower.getAvatar())) ? "" : mManPower.getAvatar() ;
 
         if(TextUtils.isEmpty(avatar)){
-//            int res = R.drawable.ic_envihero;
-//            mImgHero.setImageResource(res);
-            Random rand = new Random();
-            int pos = rand.nextInt(4);
-
-            Glide.with(mContext).load(artist.get(pos)).into(mImgHero);
+            int res = R.drawable.anonymous;
+            mImgHero.setImageResource(res);
 
         } else {
-            Glide.with(mContext).load(avatar).into(mImgHero);
+            final String baseUrl = LoginUtils.getBaseUrl(mContext);
+            Glide.with(mContext).load(baseUrl + avatar).into(mImgHero);
         }
     }
 

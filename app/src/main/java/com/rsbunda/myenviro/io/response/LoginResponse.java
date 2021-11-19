@@ -20,6 +20,9 @@ public class LoginResponse extends BaseResponse {
     @Expose
     private Organization org;
 
+    @SerializedName("base_url")
+    @Expose
+    private String baseUrl;
 
     public Token getToken() {
         return token;
@@ -43,6 +46,14 @@ public class LoginResponse extends BaseResponse {
 
     public void setOrg(Organization org) {
         this.org = org;
+    }
+
+    public String getBaseUrl() {
+        return baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
     @Override

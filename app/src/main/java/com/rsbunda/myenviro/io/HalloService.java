@@ -1,9 +1,10 @@
 package com.rsbunda.myenviro.io;
 
-import com.rsbunda.myenviro.io.model.FeedbackResponse;
+import com.rsbunda.myenviro.io.response.FeedbackResponse;
 import com.rsbunda.myenviro.io.model.OrganizationData;
 import com.rsbunda.myenviro.io.model.activity.DailyData;
 import com.rsbunda.myenviro.io.model.cleaning.DailyReportData;
+import com.rsbunda.myenviro.io.model.cleaning.DailyReportDetailData;
 import com.rsbunda.myenviro.io.model.cleaning.DailyReportImagesData;
 import com.rsbunda.myenviro.io.model.client.RefreshToken;
 import com.rsbunda.myenviro.io.model.layanan.LayananData;
@@ -11,6 +12,7 @@ import com.rsbunda.myenviro.io.model.layanan.ProductLayananData;
 import com.rsbunda.myenviro.io.model.sales.JosData;
 import com.rsbunda.myenviro.io.model.sales.ManPowerDetilData;
 import com.rsbunda.myenviro.io.response.ChangePasswordResponse;
+import com.rsbunda.myenviro.io.response.DailyReportResponse;
 import com.rsbunda.myenviro.io.response.FcmResponse;
 import com.rsbunda.myenviro.io.response.HalloResponse;
 import com.rsbunda.myenviro.io.response.BaseResponse;
@@ -47,11 +49,28 @@ public interface HalloService {
 
     //Get Daily Activity Report by JOS Id
     @GET("cleaning/v1/darbyjos")
-    Call<DailyReportData> darbyjos(
+    Call<DailyReportDetailData> darbyjos(
             @Header("Authorization") String token,
             @Query("jos_id") int josid,
             @Query("client_id") String clientId,
             @Query("date_report") String dateReport);
+
+    //Load Daily Report Recommendation
+    @GET("cleaning/client/v1/dacbyidjos")
+    Call<DailyReportData> getdarrec(
+            @Header("Authorization") String token,
+            @Query("dac_id") int id,
+            @Query("jos_id") int josid
+    );
+
+    //Add New Cleaning Daily Report Recommendation
+    @FormUrlEncoded
+    @POST("cleaning/client/v1/addnewdarfeed")
+    Call<DailyReportResponse> addNewDailyReportFeedback(
+            @Header("Authorization") String token,
+            @Field("dac_id") int id,
+            @Field("jos_id") int josId,
+            @Field("feedback") String feedback);
 
     //Get Daily Activity Report by JOS Id
     @GET("cleaning/client/v1/dailyreportimage")

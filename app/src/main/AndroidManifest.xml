@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto"
     package="com.rsbunda.myenviro">
 
@@ -9,6 +10,12 @@
          Newer devices will use runtime permissions.
     -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera2.full" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <dist:module dist:instant="true" />
 
@@ -83,33 +90,21 @@
             android:launchMode="singleTop"
             android:parentActivityName="com.rsbunda.myenviro.home.HomeActivity" />
 
-        <!-- History -->
-        <activity
-            android:name="com.rsbunda.myenviro.history.HistoryActivity"
-            android:exported="true"
-            android:label="@string/title_history"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.HalloBunda.History">
-        </activity>
-
         <!-- Feedback -->
         <activity
             android:name="com.rsbunda.myenviro.feedback.FeedbackActivity"
             android:exported="false"
             android:label="@string/title_feedback"
             android:launchMode="singleTop"
-            android:parentActivityName="com.rsbunda.myenviro.history.HistoryActivity" />
-
+            android:parentActivityName="com.rsbunda.myenviro.dashboard.DashboardActivity" />
 
         <activity
             android:name="com.rsbunda.myenviro.dashboard.DashboardActivity"
             android:exported="true"
-            android:label="@string/title_schedule"
+            android:label="@string/title_dashboard"
             android:launchMode="singleTop"
             android:theme="@style/Theme.HalloBunda.Schedule">
         </activity>
-
-               <!-- Register -->
 
         <!-- Inbox -->
         <activity

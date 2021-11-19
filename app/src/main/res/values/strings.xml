@@ -11,27 +11,26 @@
         <item quantity="other">%s minutes</item>
     </plurals>
 
-    <string name="app_name" translatable="false">myenviro</string>
+    <string name="app_name" translatable="false">MyEnviro</string>
 
     <string name="title_notifications">Notifications</string>
     <string name="title_account">Account</string>
     <string name="title_about">About Us</string>
-    <string name="title_about_hospital">About MyEnviro</string>
+    <string name="title_about_us">About MyEnviro</string>
     <string name="title_announcement">Announcement</string>
     <string name="title_announcement_detail">News detail</string>
     <string name="title_cancel">Cancel</string>
+    <string name="title_complaint">Write a Complaint</string>
+
     <string name="title_contributors">Contributors</string>
     <string name="title_change_password">Change Password</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_doctor">Doctor</string>
-    <string name="title_doctor_reviews">Doctor Reviews</string>
     <string name="title_daily_activity">Daily Activity</string>
     <string name="title_eula">End User License Agreement</string>
     <string name="title_faq">FAQ</string>
     <string name="title_feedback">Feedback</string>
     <string name="title_forgot_password">Forgot Password</string>
     <string name="title_help">Help</string>
-    <string name="title_holidays">Holidays</string>
     <string name="title_history">History</string>
     <string name="title_home">Home</string>
     <string name="title_information">Information</string>
@@ -49,15 +48,10 @@
     <string name="title_recommend_us">Recommend Us</string>
     <string name="title_report">Report</string>
     <string name="title_reset_password">Reset Password</string>
-    <string name="title_room">Room Available</string>
     <string name="title_search">Search</string>
-    <string name="title_schedule">Schedule</string>
     <string name="title_settings">Settings</string>
     <string name="title_share">Share</string>
-    <string name="title_surgery_schedule">Surgery Schedule</string>
     <string name="title_teams">Teams</string>
-    <string name="title_ticket_else">My Other Tickets</string>
-    <string name="title_ticket_another">Another Patient Tickets</string>
     <string name="title_tos">Term of Service</string>
     <string name="title_values">Values</string>
     <string name="title_vision">Vision</string>
@@ -82,8 +76,8 @@
     <string name="about_copyrights"><![CDATA[\u00A9 2021 PT Permata Bunda Bersama. All rights Reserved]]></string>
     <string name="about_app">Developer</string>
     <string name="about_developer"><![CDATA[MyEnviro is created by IT Team PT Permata Bunda Bersama Surabaya, Indonesia. <br/><br/><b>Development Leader :</b> Roni Ahmad <br/>Please fell free to contact Us at <br/>Email: <a href="mailto:roni.connect@gmail.com">roni.connect@gmail.com</a>.]]></string>
-    <string name="about_myenviro">MyEnviro is Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</string>
-    <string name="about_app_tagline">Connecting the dots</string>
+    <string name="about_myenviro">MyEnviro is an application which makes Facility Service Management easy by organizing your projects in one screen</string>
+    <string name="about_app_tagline">Facility Service Management With Ease</string>
     <string name="org_name" translatable="false">PT PERMATA BUNDA BERSAMA</string>
 
     <string name="how_to_register_new_account">How to register new account at MyEnviro</string>
@@ -132,6 +126,7 @@
     <string name="holiday_description"><![CDATA[<strong>Please notice : </strong> The following is the holiday information. You cannot register a visit to the specialist clinic %1$s during the holidays below. Please select another visit day. ]]></string>
     <string name="hospital_dummy">Bunda Hospital</string>
     <string name="more">Read More</string>
+    <string name="notes">Notes</string>
     <string name="currently_not_available">Not Available</string>
     <string name="quota"><![CDATA[Quota: %1$s]]></string>
     <string name="quota_available"><![CDATA[Quota available %1$s]]></string>
@@ -141,9 +136,13 @@
     <string name="remaining">Remaining</string>
     <string name="retry">Retry</string>
     <string name="register">Register</string>
+    <string name="recommendation">Recommendation</string>
+    <string name="feedback">Feedback</string>
     <string name="outstanding">Outstanding</string>
     <string name="sendme_offer">Send Me Offer</string>
     <string name="select_day"><![CDATA[Open %1$s days a week. Swipe the list below]]></string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="send_recommendation">Send Recommendation</string>
     <string name="surgery_schedule">Surgery Schedule</string>
     <string name="today">Today</string>
     <string name="total">Total</string>
@@ -172,6 +171,7 @@
 
     <!-- Control Panel -->
     <string name="cp_attendance">Attendance</string>
+    <string name="cp_complaint">Complaint</string>
     <string name="cp_teams">Teams</string>
     <string name="cp_teams_member">Members</string>
     <string name="cp_document">Document</string>
@@ -186,35 +186,19 @@
     <string name="empty_jmpd"><![CDATA[This Job Order Sheet has no teams]]></string>
     <string name="empty_dac"><![CDATA[This Job Position has no daily activity defined]]></string>
     <string name="empty_news"><![CDATA[No news found in your inbox.]]></string>
-    <string name="empty_holidays"><![CDATA[Currently We do not have holiday in our calendar work days]]></string>
-    <string name="empty_doctor_reviews"><![CDATA[Currently this doctor has no reviews yet, be the first!]]></string>
     <string name="empty_history">It seems that you have never done a medical examination at this hospital. We did not find your visit history</string>
     <string name="empty_rating">Rating is not available</string>
     <string name="empty_schedule">No schedule found</string>
-    <string name="empty_doctors"><![CDATA[There are currently no doctors practicing for your selected clinic.]]></string>
-    <string name="empty_doctor_leave">No doctor leave schedule found</string>
-    <string name="empty_room">No rooms found</string>
-    <string name="empty_report">No report found</string>
+    <string name="empty_daily_report">No daily report found</string>
+    <string name="empty_report">No report found, please try another date</string>
     <string name="empty_report_image">This report has no picture uploaded</string>
-    <string name="empty_ticket"><![CDATA[<strong>Hai %1$s,</strong> currently You have not scheduled yourself for visiting our hospital. Please make an appointment first]]></string>
-    <string name="empty_other_ticket"><![CDATA[You have not scheduled other patient for visiting our hospital. Please make an appointment first]]></string>\
-    <string name="empty_myelse_ticket"><![CDATA[You have not been scheduled for visiting our hospital. Please make an appointment first]]></string>
-    <string name="empty_surgery_schedule"><![CDATA[<strong>Hai %1$s,</strong> currently You are not schedule for medical surgery]]></string>
-
-    <!-- Subtitle of a session indicating time interval and room number -->
-    <string name="event_subtitle"><xliff:g id="time">%1$s</xliff:g> in <xliff:g id="venue">%2$s</xliff:g></string>
 
     <!-- Subtitle of a session indicating time interval and room number -->
     <string name="event_detail_subtitle"><xliff:g id="time">%1$s</xliff:g></string>
-
     <string name="event_contact_subtitle">Phone <xliff:g id="phone">%1$s</xliff:g> - Email <xliff:g id="email">%2$s</xliff:g></string>
 
     <!-- Button text indicating that the session can be added to the user's bookmarks. -->
     <string name="add_bookmark">Add bookmark</string>
-
-    <!-- Label on a button that, when clicked, adds the currently displayed session to their schedule. -->
-    <string name="add_to_schedule">Add to schedule</string>
-
     <!-- Button text indicating that the session can be removed from the user's bookmarks. -->
     <string name="remove_bookmark">Remove bookmark</string>
 
@@ -237,35 +221,31 @@
     <string name="label_detail_account">Account Detail</string>
     <string name="label_profile_name">User Name</string>
     <string name="label_profile_email" translatable="false">admin@domain.net</string>
+
     <!-- Strings for Login page-->
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="label_old_password">Old Password</string>
-    <string name="label_new_password">New Password</string>
-    <string name="label_retype_new_password">Retype New Password</string>
-    <string name="label_password">Password</string>
-    <string name="label_retype_password">Retype Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="retype_new_password">Retype New Password</string>
+    <string name="retype_password">Retype Password</string>
 
-    <string name="label_profile_last_visit">Last Visit</string>
-    <string name="label_profile_last_poli">Clinic Visited</string>
-
-    <string name="label_profile_name_na">Anonymous</string>
-    <string name="label_profile_address_na">N/A</string>
-    <string name="label_profile_last_visit_na">N/A</string>
-    <string name="label_profile_last_poli_na">N/A</string>
-    <string name="label_profile_invalid">Your Account has not been validated</string>
-    <string name="label_profile_temporary">You are using temporary account, Please validate first</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="profile_address_na">N/A</string>
+    <string name="profile_last_visit_na">N/A</string>
+    <string name="profile_last_poli_na">N/A</string>
+    <string name="profile_invalid">Your Account has not been validated</string>
+    <string name="profile_temporary">You are using temporary account, Please validate first</string>
 
     <!-- Message shown in an error bar when there is a problem synchronizing the user's sessions
     to their account. Can be summarized as "Synchronization failed." if too long [CHAR_LIMIT=50] -->
-    <string name="login_failed_text">Could not login your sessions due to an error.</string>
+    <string name="login_failed">Could not login your sessions due to an error.</string>
 
     <!-- Error message display when user enter invalid email address -->
     <string name="login_failed_text_email">Please enter valid email</string>
     <!-- Error message display when user enter invalid email address -->
     <string name="login_failed_text_password">Please enter the password</string>
 
-    <!-- Button to require new password -->
     <string name="forgot_password">I Forgot My Password</string>
 
     <string name="is_forgot_password">Forgot your password?</string>
@@ -280,59 +260,30 @@
 
     <!-- Button to require new password-->
     <string name="create_account">No account yet? Create one</string>
-    <string name="label_have_account">Already have an account?</string>
+    <string name="have_account">Already have an account?</string>
     <string name="back_to_login_page">Back to Login page</string>
 
-    <!-- A single button shown on informative popups, like EULA, open source licenses and About -->
-    <string name="_continue">Continue</string>
     <string name="ok">OK</string>
     <string name="no">NO</string>
     <string name="yes">Yes</string>
     <string name="confirm">Confirm</string>
     <string name="information">Information</string>
-    <string name="information_doctor_off">Doctor Leave Information</string>
-    <string name="information_holidays">Holidays Information</string>
     <string name="warning">Warning</string>
     <string name="registration">Registration</string>
-    <string name="px_information">Patient Information</string>
 
-    <string name="user_has_active_ticket">You already have a registration before. Please proceed it first or cancel it to make a new registration. However You can still register for other Patient</string>
-    <string name="confirm_account_registration"><![CDATA[Please make sure that your data is correct.<br>Use your active email address in case you forgot your password, you reset it using your email registration.<br>Are you sure going to proceed? ]]></string>
-    <!--confirmation cancel booking-->
-    <string name="confirm_cancellation_registration">You are about to cancel registration ID  %1$s. Do you really want to proceed ?</string>
-
-    <string name="confirm_delete_report_image">You are about to delete image report. Do you really want to proceed ?</string>
-
-    <string name="confirm_new_px"><![CDATA[New Patient is a person who never go to our hospital, never been registered as a patient on our hospital before.<br><br>Click Yes if you are a new patient,<br>Or click No if you are an old patient.<br><br>
-                Are you a new patient?]]></string>
-
-    <string name="user_cancel_registration">The patient has cancelled registration</string>
     <string name="user_give_rating">The patient has given rating</string>
 
-    <string name="rate_news">Rate this news</string>
+    <string name="complaint_a11y_added">Complaint added to your list</string>
 
-    <!-- Accessibility text announced as a response to pressing a button to add a session to the schedule. -->
-    <string name="session_details_a11y_session_added">Session added to your schedule</string>
-
-    <!-- Accessibility text announced as a response to pressing a button to remove a session from the schedule. -->
-    <string name="session_details_a11y_session_removed">Session removed from your schedule</string>
+    <string name="complaint_a11y_removed">Session removed from your schedule</string>
 
     <string name="end_date">End</string>
 
     <string name="err_socket_timeout">Socket Time out. Please try again.</string>
     <string name="err_unauthorized">Unauthorized. Please try again</string>
-    <string name="err_nik">Please fix you input ID</string>
     <string name="rate_session">Rate session</string>
     <string name="select_date_report">Select report date</string>
     <string name="scope_of_work">Scope Of Work</string>
-    <string name="send_feedback">Send Feedback</string>
-
-    <!-- Button text indicating the session is in the user's schedule and can be removed -->
-    <string name="remove_from_schedule">Remove from schedule</string>
-
-    <!-- Section title for sessions related to a particular event session -->
-    <string name="related_sessions">Related Sessions</string>
-
 
     <string name="login_expired">Your session has expired, please login again</string>
 
@@ -343,27 +294,8 @@
     <string name="remark">Remark</string>
     <string name="work_todo">Work Todo</string>
 
-    <!-- Text indicating the session is going to start in some number of minutes -->
-    <string name="time_hint_about_to_start_min">This session will start in <xliff:g id="minutes">%1$d</xliff:g> min.</string>
-
-    <!-- Text indicating the session is going to start in less than 1 minute -->
-    <string name="time_hint_about_to_start_shortly">This session is about to start (less than 1 minute).</string>
-
-    <!-- Text indicating the session has ended -->
-    <string name="time_hint_session_ended">This session has ended.</string>
-
-    <!-- Text indicating the session just started -->
-    <string name="time_hint_started_just">This session is happening now! (just started)</string>
-
-    <!-- Text indicating the session is in progress but has not completed -->
-    <string name="time_hint_started_min">This session is happening now! (started <xliff:g id="minutes">%1$d</xliff:g> min. ago)</string>
-
-    <string name="share_header">Let me recommend you this application</string>
-    <string name="share_schedule_header">Specialist Polyclinic Schedule</string>
-    <string name="share_schedule_poli">Polyclinic</string>
-    <string name="share_schedule_doctor">Doctor</string>
-    <string name="share_schedule_rating">Rating</string>
-    <string name="share_schedule_download_at">MyEnviro aplication can be downloaded at</string>
+    <string name="share_header">MyEnviro is an application which makes Facility Service Management easy in a modern day by organizing your project in one screen.</string>
+    <string name="share_download_at">MyEnviro aplication can be downloaded at</string>
 
     <!-- Short text welcoming the user to the application -->
     <string name="welcome_to_myenviro">Welcome to MyEnviro</string>
@@ -371,15 +303,12 @@
     <string name="welcome_eula">End User License Agreement</string>
 
     <!-- Medium-length welcome text indicating the subsequent text is important legal information -->
-    <string name="welcome_text">Before getting started, here is some important legal information regarding the use of this app.</string>
+    <string name="welcome_text">Before getting started, here is some important legal information regarding the use of this application.</string>
 
-    <!-- Text for a session subtitle indicating it does not have a room specified -->
-    <string name="unknown_venue">(Unspecified Venue)</string>
     <string name="unknown">Unknown</string>
 
     <!-- Text  Feature underconstruction -->
     <string name="underconstruction">Feature is currently being underconstruction</string>
-    <string name="no_other_registered_available">You did not register other patient previously</string>
 
     <string name="myenviro" translatable="false">MyEnviro</string>
 
@@ -392,28 +321,19 @@
 
     <string name="profile">Profile</string>
     <string name="scan">Scan</string>
-    <string name="ticket_else">Tic Else</string>
-    <string name="ticket_no"><![CDATA[Ticket No %1$s]]></string>
-    <string name="current_queue">Current Queue</string>
     <string name="qrcode">QR Code</string>
 
     <string name="business_name">MyEnviro</string>
     <string name="business_address">Somewhere in Surabaya</string>
-    <string name="online_registration">Online Registration</string>
 
     <string name="scan_here">Scan here</string>
-
-    <string name="register_date">Please select appointment date</string>
-
-    <string name="select_date">Select Date</string>
 
     <string name="select_jos_first">Please select Job Order Sheet first</string>
 
     <string name="date">Date</string>
 
-    <string name="date_visit">Date Visit</string>
-
     <string name="job_order_sheet">Job Order Sheet</string>
+    <string name="job_order_sheet_empty">Job Order Sheet is not selected yet</string>
 
     <string name="tell_us_your_feedback">Tell us about your experiences with Us</string>
 
@@ -433,10 +353,8 @@
 
     <string name="become_member">You are not logged in. Become a member first and enjoy the benefits!</string>
 
-    <string name="wrong_day">You have to pick date with day of %1$s</string>
     <!-- Histories items-->
     <string name="history_date_visit">Date Visit</string>
-    <string name="surgery_schedule_date">Surgery Schedule Date</string>
 
     <string name="signin">Sign In</string>
     <string name="email_hint">Email</string>
@@ -466,56 +384,12 @@
     <string name="reg_email">Email</string>
     <string name="reg_password">Password</string>
     <string name="reg_retype_password">Retype Password</string>
-    <string name="reg_hospital">Retype Password</string>
-    <string name="reg_select_hospital">Before you begin, please select hospital first</string>
-    <string name="reg_idrm">Medical record ID</string>
-    <string name="new_px">I am a new patient</string>
-    <string name="reg_terms"><![CDATA[ I have read and agree to the <a href="https://myenviro.id/tos" target="_blank">Terms</a> and <a href="https://myenviro.id/policy" target="_blank">Condition</a>]]></string>
-    <!-- Register Px-->
-    <string name="pxreg_other">I register for another patient</string>
-    <string name="pxreg_name">Name</string>
-    <string name="pxreg_data_valid">My data is correct</string>
-    <string name="pxreg_dob">Date of Birth</string>
-    <string name="pxreg_pob">Place of Birth</string>
-    <string name="pxreg_mobile">Phone No.</string>
-    <string name="pxreg_idrm">Medical Record ID</string>
-    <string name="pxreg_nik">ID Number</string>
-    <string name="pxreg_postops_code">Surat Kontrol</string>
-    <string name="pxreg_no_skdp">SKDP Number</string>
-    <string name="pxreg_bpjs">BPJS Card Number</string>
-    <string name="pxreg_norujukan">BPJS Reference Number</string>
-    <string name="pxreg_norujukan_expired">Reference Number is expired</string>
-    <string name="pxreg_norujukan_invalid">Reference Number is invalid, please fill your ID Number and BPJS ID manually</string>
-    <string name="pxreg_datevisit_required">You have to select date visit first</string>
-    <string name="pxreg_nik_required">ID Number is required</string>
-    <string name="pxreg_idrm_required">Medical record ID is required</string>
-    <string name="pxreg_name_required">Name is required</string>
-    <string name="pxreg_dob_required">Date of birth is required</string>
-    <string name="pxreg_mobile_required">Phone No. is required</string>
-    <string name="pxreg_address_required">Address is required</string>
-    <string name="pxreg_cat_required">Patient category is required</string>
-    <string name="pxreg_norujukan_required">Reference Number is required</string>
+    <string name="reg_terms"><![CDATA[ I have read and agree to the <a href="https://myenviro.id/#/tos" target="_blank">Terms</a> and <a href="https://myenviro.id/#/policy" target="_blank">Condition</a>]]></string>
 
-    <string name="pxreg_bpjs_required">BPJS Number is required</string>
-    <string name="pxreg_noskdp_required">SKDP Number is required</string>
-    <string name="pxreg_postopscode_required">No surat kontrol is required</string>
-    <string name="pxreg_address">Address</string>
-
-    <string name="pxreg_acc_email_required">Email is required</string>
     <string name="pxreg_acc_password_required">Password is required</string>
     <string name="pxreg_acc_retype_password_required">Retype Password is required</string>
     <string name="pxreg_acc_username_required">Username is required</string>
 
-
-    <string name="pxreg_pxcat_prompt">Choose patient category</string>
-
-    <string-array name="pxreg_pxcat_arrays">
-        <item>UMUM</item>
-        <item>BPJS</item>
-        <item>KONTROL POST OPERASI</item>
-        <item>KONTROL (SKDP)</item>
-        <!--        <item>LAINNYA</item>-->
-    </string-array>
 
     <!-- SETTTINGS-->
     <string name="pref_cat_general">General</string>
@@ -581,7 +455,7 @@
     <string name="barcode_failure">No barcode captured</string>
     <string name="barcode_error">"Error reading barcode: %1$s"</string>
 
-    <string name="title_temporary_account">Temporary\nAccount</string>
+    <string name="temporary_account">Temporary Account</string>
 
 
 </resources>

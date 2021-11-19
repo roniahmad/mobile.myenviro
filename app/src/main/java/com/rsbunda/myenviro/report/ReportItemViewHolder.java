@@ -24,9 +24,10 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.rsbunda.myenviro.R;
 import com.rsbunda.myenviro.home.DividerDecoration;
-import com.rsbunda.myenviro.io.model.cleaning.DailyReport;
+import com.rsbunda.myenviro.io.model.cleaning.DailyReportDetail;
 import com.rsbunda.myenviro.io.model.cleaning.DailyReportImages;
 import com.rsbunda.myenviro.ui.widget.RaviDividerItemDecoration;
+import com.rsbunda.myenviro.util.LoginUtils;
 import com.rsbunda.myenviro.util.TimeUtils;
 
 import org.apache.commons.lang3.StringUtils;
@@ -42,6 +43,7 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
 
     private final TextView mLocation, mStart, mEnd, mDuration, mKindOfWork, mWorkToDo, mRemark;
     private final ImageView mBtnMore;
+//    private final Button mBtnComplaint;
     private final Context mContext;
 
     private final Callbacks mCallbacks;
@@ -54,17 +56,17 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
     private ReportImageAdapter mReportImageAdapter;
 
     @Nullable
-    private DailyReport model;
+    private DailyReportDetail model;
 
-    private List<DailyReport> mListDailyReport;
+    private List<DailyReportDetail> mListDailyReportDetail;
 
 
-    public ReportItemViewHolder(View itemView, Callbacks callbacks, Context context, List<DailyReport> dailies, List<DailyReportImages> dailyImages) {
+    public ReportItemViewHolder(View itemView, Callbacks callbacks, Context context, List<DailyReportDetail> dailies, List<DailyReportImages> dailyImages) {
         super(itemView);
 
         this.mContext = context;
         this.mCallbacks = callbacks;
-        this.mListDailyReport = dailies;
+        this.mListDailyReportDetail = dailies;
         this.mListReportImages = dailyImages;
 
         mLocation = (TextView) itemView.findViewById(R.id.dac_location);
@@ -76,11 +78,12 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
         mRemark = (TextView) itemView.findViewById(R.id.dac_remark);
 
         mBtnMore = (ImageView) itemView.findViewById(R.id.btn_more);
+//        mBtnComplaint = (Button) itemView.findViewById(R.id.complaint_link);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mCallbacks==null || mListDailyReport ==null){
+                if(mCallbacks==null || mListDailyReportDetail ==null){
                     return;
                 }
                 mCallbacks.onReportClicked(model);
@@ -90,7 +93,7 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
         mBtnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mCallbacks==null || mListDailyReport ==null){
+                if(mCallbacks==null || mListDailyReportDetail ==null){
                     return;
                 }
 
@@ -120,19 +123,29 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
             }
         });
 
+//        mBtnComplaint.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(mCallbacks==null || mListDailyReport == null){
+//                    return;
+//                }
+//                mCallbacks.onReportComplaint(model);
+//            }
+//        });
+
         mRecyclerViewImages = (RecyclerView) itemView.findViewById(R.id.list_image);
         mEmpty2 = (TextView) itemView.findViewById(R.id.tv_empty2);
         mEmpty2.setText(mContext.getString(R.string.empty_report_image));
     }
 
     public static ReportItemViewHolder newInstance(ViewGroup parent, Callbacks callbacks,
-                                                   Context ctx, List<DailyReport> dailies, List<DailyReportImages> dailyImages){
+                                                   Context ctx, List<DailyReportDetail> dailies, List<DailyReportImages> dailyImages){
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.report_item, parent, false);
         return new ReportItemViewHolder(itemView, callbacks, ctx, dailies, dailyImages);
     }
 
-    public void bind(@NonNull DailyReport item){
+    public void bind(@NonNull DailyReportDetail item){
         model = item;
 
         mLocation.setText(model.getArea());
@@ -140,6 +153,7 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
         final String start = new SimpleDateFormat("HH:mm:ss").format(model !=null ? model.getMulai():"");
         final String end = new SimpleDateFormat("HH:mm:ss").format(model !=null ? model.getSelesai():"");
         final String duration = TimeUtils.formatDuration(mContext, model.getMulai().getTime(), model.getSelesai().getTime());
+
         mStart.setText(start);
         mEnd.setText(end);
         mDuration.setText(duration);
@@ -154,7 +168,7 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
         //laporan dac detil
         int lddId = model.getId();
 
-        if(mListDailyReport.size()>0){
+        if(mListDailyReportDetail.size()>0){
             for(int i = 0; i < mListReportImages.size(); i++){
                 int currId = mListReportImages.get(i).getLddId();
                 if(currId==lddId){
@@ -226,17 +240,22 @@ public class ReportItemViewHolder extends RecyclerView.ViewHolder
 
 
         if(reportImage == StringUtils.EMPTY){
+
             int res = R.drawable.ic_envihero;
             imgPreview.setImageResource(res);
+
         } else {
-            String path = "http://192.168.1.138:8006";
-            Glide.with(mContext).load(path+reportImage).into(imgPreview);
+
+            String baseUrl = LoginUtils.getBaseUrl(mContext);
+            Glide.with(mContext).load(baseUrl+reportImage).into(imgPreview);
+
         }
     }
 
     public interface Callbacks {
-        void onReportClicked(DailyReport daily);
-        void onReportShared(DailyReport daily);
+        void onReportClicked(DailyReportDetail daily);
+        void onReportShared(DailyReportDetail daily);
+        void onReportComplaint(DailyReportDetail daily);
     }
 
 }

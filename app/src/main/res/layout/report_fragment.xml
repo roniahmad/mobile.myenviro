@@ -6,35 +6,36 @@
   roni.connect@gmail.com
   +6287781289268
 -->
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/root_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:transitionName="@string/transition_session_background"
-    android:background="@color/warm_grey"
-    app:statusBarBackground="@null">
+    android:background="@color/warm_grey">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.HalloBunda.AppBarOverlay">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/transparent"
-            app:popupTheme="@style/Theme.HalloBunda.PopupOverlay" >
+            app:popupTheme="@style/Theme.HalloBunda.PopupOverlay">
+
             <TextView
                 android:id="@+id/toolbar_title"
                 style="@style/TextAppearance.ToolbarTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_report" />
+
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -56,6 +57,116 @@
 
             <include layout="@layout/empty_layout"
                 android:visibility="gone"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notes_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/card_elevation"
+                app:cardBackgroundColor="@color/whiteTextColor"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                android:layout_margin="@dimen/spacing_normal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_normal"
+                    android:layout_marginBottom="@dimen/padding_normal">
+
+                    <RelativeLayout
+                        android:id="@+id/notes_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="blocksDescendants"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="@string/notes"
+                            android:textAllCaps="false" />
+
+                        <ImageButton
+                            android:id="@+id/btn_toggle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/transparent"
+                            android:src="@drawable/ic_keyboard_arrow_down" />
+
+                    </RelativeLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_recommendation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/ed_recommendation"
+                            style="@style/modifiedEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="@string/recommendation"
+                            android:inputType="textMultiLine"
+                            android:lines="5"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_feedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/ed_feedback"
+                            style="@style/modifiedEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="@string/feedback"
+                            android:inputType="textMultiLine"
+                            android:lines="5"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/feedback_button_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <Button
+                            android:id="@+id/feedback_link"
+                            style="@style/Widget.HalloBunda.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:drawableStart="@drawable/ic_send_white"
+                            android:drawablePadding="@dimen/spacing_normal"
+                            android:text="@string/send_feedback"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@android:id/list"

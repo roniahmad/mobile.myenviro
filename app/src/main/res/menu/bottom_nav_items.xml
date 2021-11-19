@@ -8,10 +8,7 @@
         android:id="@+id/dashboard_nav_item"
         android:checkable="true"
         android:visible="false" />
-<!--    <item-->
-<!--        android:id="@+id/history_nav_item"-->
-<!--        android:checkable="true"-->
-<!--        android:visible="false" />-->
+
     <item
         android:id="@+id/notification_nav_item"
         android:checkable="true"

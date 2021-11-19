@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Copyright 2019 RS Bunda. All rights reserved.
-
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingBottom="@dimen/padding_normal"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -33,6 +34,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/btn_more"
+                android:ellipsize="end"
+                android:maxLines="2"
                 tools:text="Product Name" />
 
             <ImageButton
@@ -61,7 +65,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/add_bookmark"
-                android:src="@drawable/ic_person" />
+                android:src="@drawable/ic_person"
+                app:tint="?attr/colorControlNormal"/>
 
             <TextView
                 android:id="@+id/product_cp"
@@ -69,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_micro"
                 style="@style/Schedule.Day"
+                android:textAllCaps="false"
                 tools:text="9:00 AM - 11:30 AM"/>
 
         </LinearLayout>
@@ -87,7 +93,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/add_bookmark"
-                android:src="@drawable/ic_phone" />
+                android:src="@drawable/ic_phone"
+                app:tint="?attr/colorControlNormal"/>
 
             <TextView
                 android:id="@+id/phone_cp"
@@ -113,7 +120,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/add_bookmark"
-                android:src="@drawable/ic_email" />
+                android:src="@drawable/ic_email"
+                app:tint="?attr/colorControlNormal"/>
 
             <TextView
                 android:id="@+id/email_cp"
@@ -125,8 +133,6 @@
 
         </LinearLayout>
 
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -136,7 +142,7 @@
 
             <Button
                 android:id="@+id/offer_button"
-                style="@style/Widget.HalloBunda.PxRegister"
+                style="@style/Widget.HalloBunda.SendOffer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

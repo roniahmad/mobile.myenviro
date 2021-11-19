@@ -96,7 +96,6 @@ public class ProductItemViewHolder extends RecyclerView.ViewHolder {
                 if(mCallbacks==null || mProduct==null){
                     return;
                 }
-
                 mCallbacks.onProductOffer(mProduct);
             }
         });

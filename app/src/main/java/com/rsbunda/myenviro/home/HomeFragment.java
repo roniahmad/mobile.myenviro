@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rsbunda.myenviro.R;
 import com.rsbunda.myenviro.home.service.ServiceItemViewHolder;
@@ -152,10 +153,6 @@ public class HomeFragment extends Fragment
         mTxtHero = (TextView) v.findViewById(R.id.hero_name);
         mTxtHeroCompany = (TextView) v.findViewById(R.id.hero_nip);
 
-//        mBtnCancel = (Button) v.findViewById(R.id.outstanding_link);
-//        mBtnProfile = (Button) v.findViewById(R.id.profile_link);
-//        mBtnScan = (Button) v.findViewById(R.id.qrcode_link);
-
         mBtnLogin = (Button) v.findViewById(R.id.login_link);
         mBtnRegister = (Button) v.findViewById(R.id.register_link);
 
@@ -167,28 +164,6 @@ public class HomeFragment extends Fragment
     }
 
     private void initListeners(){
-
-//        mBtnCancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //TODO
-//            }
-//        });
-//
-//        mBtnProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ProfileActivity.startProfileActivity(getActivity());
-//            }
-//        });
-//
-//        mBtnScan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                displayMyQRCode();
-//            }
-//        });
-
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -205,46 +180,6 @@ public class HomeFragment extends Fragment
 
     }
 
-//    private void displayFeedBackDialog(final int lastVisitNumber) {
-//        if(lastVisitNumber>0){
-//            BottomSheetRatingFragment bottomSheetFragment = new BottomSheetRatingFragment();
-//            bottomSheetFragment.show(getChildFragmentManager(), bottomSheetFragment.getTag());
-//        }
-//
-//    }
-
-    private void displayMyQRCode(){
-//        FragmentManager fm = getActivity().getSupportFragmentManager();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        Fragment pre = fm.findFragmentByTag("dialog_qrcode");
-//        if(pre != null){
-//            ft.remove(pre);
-//        }
-//        ft.addToBackStack(null);
-//
-//        final String idrm = LoginUtils.getHeroNip(mContext);
-//        final String org = LoginUtils.getOrganizationId(mContext);
-//
-//        String bookingCode = "";
-//        if(!StringUtils.isEmpty(idrm)){
-//            bookingCode = idrm;
-//        }
-//
-//        JSONObject jsonObject = new JSONObject();
-//        try {
-//            jsonObject.put("ir", idrm);
-//            jsonObject.put("ou", org);
-//            jsonObject.put("bc", bookingCode);
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        String message = jsonObject.toString();
-//        QrCodeDialog dlg = QrCodeDialog.newInstance(message, mContext);
-//        dlg.show(ft,"dialog_qrcode" );
-    }
-
     private ServiceItemViewHolder.Callbacks getCallbacks(){
         return  this;
     }
@@ -252,7 +187,6 @@ public class HomeFragment extends Fragment
     private void loadServices(){
         mProgressBar.setVisibility(View.VISIBLE);
         mListLayanan.clear();
-
 
         final String token = LoginUtils.getUserToken(mContext);
 
@@ -303,7 +237,6 @@ public class HomeFragment extends Fragment
                     mListProductLayanan = data.getLayanan();
 
                     if(mListProductLayanan.size()>0){
-
                         mHandler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -346,14 +279,17 @@ public class HomeFragment extends Fragment
         if(haslogin){
             mTxtHero.setText(LoginUtils.getHeroName(mContext));
             mTxtHeroCompany.setText(LoginUtils.getOrganizationName(mContext));
+        }else {
+            mTxtHero.setText("");
+            mTxtHeroCompany.setText("");
         }
     }
 
-    private void updateEmptyView(boolean isempty){
+    private void updateEmptyView(boolean isEmpty){
         final boolean userHasLogin = LoginUtils.isUserHasLogin(mContext);
 
-        mRecyclerView.setVisibility( isempty? View.GONE : View.VISIBLE );
-        mViewEmptyContainer.setVisibility(isempty? View.VISIBLE : View.GONE);
+        mRecyclerView.setVisibility( isEmpty? View.GONE : View.VISIBLE );
+        mViewEmptyContainer.setVisibility(isEmpty? View.VISIBLE : View.GONE);
         mNoticeContainer.setVisibility(userHasLogin ? View.GONE : View.VISIBLE);
     }
 
@@ -397,6 +333,6 @@ public class HomeFragment extends Fragment
 
     @Override
     public void onServicesClicked(Layanan service) {
-        //TODO
+        Toast.makeText(mContext, mContext.getString(R.string.underconstruction), Toast.LENGTH_SHORT).show();
     }
 }

@@ -85,7 +85,7 @@
                         android:layout_width="@dimen/cp_image_width"
                         android:layout_height="@dimen/cp_image_height"
                         android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/ic_dashboard_inspection" />
+                        app:srcCompat="@drawable/ic_dashboard_find_in_page" />
 
                     <TextView
                         android:id="@+id/tv_report"
@@ -154,7 +154,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_attendance"
+                android:id="@+id/card_complaint"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -164,7 +164,6 @@
                 card_view:cardCornerRadius="@dimen/card_corner_radius"
                 android:clickable="true"
                 android:focusable="true"
-
                 android:layout_margin="@dimen/spacing_normal">
 
                 <RelativeLayout
@@ -172,21 +171,19 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/img_attendance"
+                        android:id="@+id/img_complaint"
                         android:layout_width="@dimen/cp_image_width"
                         android:layout_height="@dimen/cp_image_height"
                         android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/ic_dashboard_attendance"
-                        app:tint="@color/body_text_disabled"/>
+                        app:srcCompat="@drawable/ic_dashboard_complaint"/>
 
                     <TextView
-                        android:id="@+id/tv_attendance"
+                        android:id="@+id/tv_complaint"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/img_attendance"
+                        android:layout_below="@id/img_complaint"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/cp_attendance"
-                        android:textColor="@color/body_text_disabled"
+                        android:text="@string/cp_complaint"
                         android:textSize="@dimen/app_text_size_large" />
 
                 </RelativeLayout>

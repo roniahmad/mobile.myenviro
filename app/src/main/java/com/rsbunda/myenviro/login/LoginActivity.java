@@ -175,15 +175,12 @@ public class LoginActivity extends BaseActivity
                 if(response.isSuccessful()){
                     final int success = response.body().getSuccess();
                     final String message = response.body().getMessage();
-
                     final Token token = response.body().getToken();
-
                     final Organization org = response.body().getOrg();
-
                     final Hero hero = response.body().getHero();
+                    final String baseUrl = response.body().getBaseUrl();
 
-
-                    onLoginSuccess(token, org, hero, password);
+                    onLoginSuccess(token, org, hero, password, baseUrl);
 
                 }else{
 
@@ -234,7 +231,7 @@ public class LoginActivity extends BaseActivity
     }
 
     public void onLoginSuccess(Token token, Organization org,
-                               Hero hero, String password) {
+                               Hero hero, String password, String baseUrl) {
 
         LoginUtils.markUserHasLogin(mContext, true);
         LoginUtils.setUserToken(mContext, token.getToken());
@@ -266,7 +263,8 @@ public class LoginActivity extends BaseActivity
             LoginUtils.setHeroPegawaiId(mContext, hero.getPegawaiId());
         }
 
-//        mBtnLogin.setEnabled(true);
+        LoginUtils.setBaseUrl(mContext, baseUrl);
+
         finish();
     }
 
@@ -303,7 +301,9 @@ public class LoginActivity extends BaseActivity
         LoginUtils.setPathDoctor(mContext, null);
         LoginUtils.setPathPoly(mContext, null);
 
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.login_failed_text),
+        LoginUtils.setBaseUrl(mContext, null);
+
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.login_failed),
                 Toast.LENGTH_LONG).show();
 
         mBtnLogin.setEnabled(true);

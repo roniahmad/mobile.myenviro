@@ -10,36 +10,35 @@ public class DailyReport {
     @SerializedName("id")
     private Integer id;
 
+    @SerializedName("jos_id")
+    private Integer josId;
+
+    @SerializedName("pegawai_id")
+    private Integer pegawaiId;
+
     @SerializedName("tanggal_lapor")
     private Date tanggalLapor;
 
-    @SerializedName("laporan_dac_id")
-    private Integer laporanDacId;
+    @SerializedName("deskripsi")
+    private String deskripsi;
 
-    @SerializedName("jp_id")
-    private Integer jenisPekerjaanId;
+    @SerializedName("rekomendasi")
+    private String rekomendasi;
 
-    @SerializedName("jenis_pekerjaan")
-    private String jenisPekerjaan;
+    @SerializedName("feedback_klien")
+    private String feedbackKlien;
 
-    @SerializedName("joi")
-    private Integer josAreaId;
+    @SerializedName("tanggal_rekomendasi")
+    private Date tanggalRekomendasi;
 
-    @SerializedName("area")
-    private String area;
+    @SerializedName("waktu_rekomendasi")
+    private Time waktuRekomendasi;
 
-    @SerializedName("mulai")
-    private Time mulai;
+    @SerializedName("tanggal_feedback")
+    private Date tanggalFeedback;
 
-    @SerializedName("selesai")
-    private Time selesai;
-
-    @SerializedName("pekerjaan")
-    private String reportPekerjaan;
-
-    @SerializedName("catatan")
-    private String reportCatatan;
-
+    @SerializedName("waktu_feedback")
+    private Time waktuFeedback;
 
     public Integer getId() {
         return id;
@@ -57,75 +56,73 @@ public class DailyReport {
         this.tanggalLapor = tanggalLapor;
     }
 
-    public Integer getLaporanDacId() {
-        return laporanDacId;
+    public Integer getPegawaiId() {
+        return pegawaiId;
     }
 
-    public void setLaporanDacId(Integer laporanDacId) {
-        this.laporanDacId = laporanDacId;
+    public void setPegawaiId(Integer pegawaiId) {
+        this.pegawaiId = pegawaiId;
     }
 
-    public Integer getJenisPekerjaanId() {
-        return jenisPekerjaanId;
+    public String getDeskripsi() {
+        return deskripsi;
     }
 
-    public void setJenisPekerjaanId(Integer jenisPekerjaanId) {
-        this.jenisPekerjaanId = jenisPekerjaanId;
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 
-    public String getJenisPekerjaan() {
-        return jenisPekerjaan;
+    public Integer getJosId() {
+        return josId;
     }
 
-    public void setJenisPekerjaan(String jenisPekerjaan) {
-        this.jenisPekerjaan = jenisPekerjaan;
+    public void setJosId(Integer josId) {
+        this.josId = josId;
     }
 
-    public Integer getJosAreaId() {
-        return josAreaId;
+    public String getRekomendasi() {
+        return rekomendasi;
     }
 
-    public void setJosAreaId(Integer josAreaId) {
-        this.josAreaId = josAreaId;
+    public void setRekomendasi(String rekomendasi) {
+        this.rekomendasi = rekomendasi;
     }
 
-    public String getArea() {
-        return area;
+    public Time getWaktuRekomendasi() {
+        return waktuRekomendasi;
     }
 
-    public void setArea(String area) {
-        this.area = area;
+    public void setWaktuRekomendasi(Time waktuRekomendasi) {
+        this.waktuRekomendasi = waktuRekomendasi;
     }
 
-    public Time getMulai() {
-        return mulai;
+    public Time getWaktuFeedback() {
+        return waktuFeedback;
     }
 
-    public void setMulai(Time mulai) {
-        this.mulai = mulai;
+    public void setWaktuFeedback(Time waktuFeedback) {
+        this.waktuFeedback = waktuFeedback;
     }
 
-    public Time getSelesai() {
-        return selesai;
+    public String getFeedbackKlien() {
+        return feedbackKlien;
     }
 
-    public void setSelesai(Time selesai) {
-        this.selesai = selesai;
+    public void setFeedbackKlien(String feedbackKlien) { this.feedbackKlien = feedbackKlien; }
+
+    public Date getTanggalRekomendasi() {
+        return tanggalRekomendasi;
     }
 
-    public String getReportPekerjaan() {
-        return reportPekerjaan;
+    public void setTanggalRekomendasi(Date tanggalRekomendasi) {
+        this.tanggalRekomendasi = tanggalRekomendasi;
     }
 
-    public void setReportPekerjaan(String reportPekerjaan) {
-        this.reportPekerjaan = reportPekerjaan;
+    public Date getTanggalFeedback() {
+        return tanggalFeedback;
     }
 
-    public String getReportCatatan() {
-        return reportCatatan;
-    }
-
-    public void setReportCatatan(String reportCatatan) {
-        this.reportCatatan = reportCatatan;
+    public void setTanggalFeedback(Date tanggalFeedback) {
+        this.tanggalFeedback = tanggalFeedback;
     }
 }

@@ -74,7 +74,7 @@ public class DashboardFragment extends Fragment
 
     //toolbox
     //toolbox
-    private View mCardAttendance;
+    private View mCardComplaint;
     private View mCardTeams;
     private View mCardDocument;
     private View mCardReport;
@@ -132,7 +132,7 @@ public class DashboardFragment extends Fragment
         mControlPanelContainer = (View) view.findViewById(R.id.control_panel_container);
 
         //toolbox
-        mCardAttendance = (View) view.findViewById(R.id.card_attendance);
+        mCardComplaint = (View) view.findViewById(R.id.card_complaint);
         mCardTeams = (View) view.findViewById(R.id.card_teams);
         mCardDocument = (View) view.findViewById(R.id.card_document);
         mCardReport = (View) view.findViewById(R.id.card_report);
@@ -170,7 +170,7 @@ public class DashboardFragment extends Fragment
             }
         });
 
-        mCardAttendance.setOnClickListener(new View.OnClickListener() {
+        mCardComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -391,12 +391,15 @@ public class DashboardFragment extends Fragment
         mViewNoticeContainer.setVisibility(userHasLogin ? View.GONE: View.VISIBLE);
         mRecyclerView.setVisibility(userHasLogin ? View.VISIBLE : View.GONE);
 
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                loadJobOrder();
-            }
-        }, HANDLER_LAUNCH_DELAY);
+        if(userHasLogin){
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loadJobOrder();
+                }
+            }, HANDLER_LAUNCH_DELAY);
+        }
+
 
     }
 

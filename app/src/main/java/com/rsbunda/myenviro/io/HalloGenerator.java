@@ -19,12 +19,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HalloGenerator {
 
-//    public static final String BASE_URL = "http://192.168.1.138:8002/v1/";
-
     public static final String BASE_URL = "http://192.168.1.138:8006/";
-
 //    public static final String BASE_URL = "http://192.168.8.108:8006/";
-//    public static final String BASE_URL = "https://api.hallobunda.net/v1/";
+//    public static final String BASE_URL = "https://api.myenviro.id/";
 
     private static HttpLoggingInterceptor logging = new HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.BODY);

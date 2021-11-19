@@ -26,13 +26,14 @@
             android:id="@+id/title_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/location"
-                style="@style/Client.Subtitle"
                 android:layout_centerInParent="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:text="@string/location"
+                style="@style/Client.Subtitle"/>
 
             <ImageButton
                 android:id="@+id/btn_more"
@@ -43,9 +44,7 @@
                 android:layout_centerInParent="true"
                 android:layout_alignParentEnd="true"/>
 
-
         </RelativeLayout>
-
 
         <TextView
             android:id="@+id/dac_location"
@@ -99,8 +98,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -132,13 +129,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_label_end"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="06:00:00"
-                    style="@style/Client.Date"
                     android:textAllCaps="false"
-                    android:layout_marginLeft="@dimen/spacing_normal"/>
+                    android:layout_marginLeft="@dimen/spacing_normal"
+                    tools:text="06:00:00"
+                    style="@style/Client.Date"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
 
     </LinearLayout>
@@ -239,13 +235,28 @@
             style="@style/Client.Desc"
             android:textAllCaps="false"/>
 
+        <!--
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/complaint_link"
+                style="@style/Widget.HalloBunda.AccItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:drawableStart="@drawable/ic_rate_review"
+                android:drawablePadding="@dimen/spacing_micro"
+                android:drawableTint="@color/colorAccent"
+                android:text="@string/title_complaint"
+                android:visibility="visible" />
 
         </RelativeLayout>
+        -->
 
         <LinearLayout
             android:layout_width="match_parent"

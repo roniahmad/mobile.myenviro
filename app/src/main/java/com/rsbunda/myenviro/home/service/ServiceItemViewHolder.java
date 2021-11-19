@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +38,7 @@ public class ServiceItemViewHolder extends RecyclerView.ViewHolder
     private final ImageView mImgService;
     private final TextView mTxtServiceName;
     private final TextView mTxtServiceDescription;
-    private final ImageButton mBtnMore;
+    private final ImageButton mBtnReadMore;
     private final Callbacks mCallbacks;
 
     private final Context mContext;
@@ -62,9 +63,19 @@ public class ServiceItemViewHolder extends RecyclerView.ViewHolder
         mImgService = (ImageView) itemView.findViewById(R.id.service_image);
         mTxtServiceName = (TextView) itemView.findViewById(R.id.service_name);
         mTxtServiceDescription = (TextView) itemView.findViewById(R.id.service_description);
-        mBtnMore = (ImageButton) itemView.findViewById(R.id.readme_link);
+        mBtnReadMore = (ImageButton) itemView.findViewById(R.id.readme_link);
 
         itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mCallbacks==null || mLayanan==null){
+                    return;
+                }
+                mCallbacks.onServicesClicked(mLayanan);
+            }
+        });
+
+        mBtnReadMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mCallbacks==null || mLayanan==null){
@@ -139,7 +150,7 @@ public class ServiceItemViewHolder extends RecyclerView.ViewHolder
 
     @Override
     public void onProductOffer(ProductLayanan product) {
-
+        Toast.makeText(mContext, mContext.getString(R.string.underconstruction), Toast.LENGTH_SHORT).show();
     }
 
     public interface Callbacks {

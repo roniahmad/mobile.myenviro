@@ -1,6 +1,5 @@
 package com.rsbunda.myenviro.manpower;
 
-
 import static com.rsbunda.myenviro.constant.CommonConstant.CONST_JOB;
 import static com.rsbunda.myenviro.constant.CommonConstant.CONST_JOB_ID;
 import static com.rsbunda.myenviro.constant.CommonConstant.CONST_JOS_ID;
@@ -50,7 +49,7 @@ public class ManPowerFragment extends Fragment
 
     private Handler mHandler = new Handler();
 
-    private List<ManPowerDetil> mListJmpd;
+    private List<ManPowerDetil> mListManPowerDetail;
     private RecyclerView mRecyclerView;
     private ManPowerAdapter mViewAdapter;
 
@@ -94,7 +93,7 @@ public class ManPowerFragment extends Fragment
         mTxtEmpty = (TextView) view.findViewById(R.id.tv_empty);
         UIUtils.setTextMaybeHtml(mTxtEmpty, getString(R.string.empty_jmpd));
 
-        mListJmpd = Collections.EMPTY_LIST;
+        mListManPowerDetail = Collections.EMPTY_LIST;
     }
 
     private  void initListeners(){
@@ -148,7 +147,7 @@ public class ManPowerFragment extends Fragment
 
     private void loadTeams(){
         mProgressBar.setVisibility(View.VISIBLE);
-        mListJmpd.clear();
+        mListManPowerDetail.clear();
 
         final String token = "Bearer "+ LoginUtils.getUserToken(mContext);
 
@@ -160,10 +159,10 @@ public class ManPowerFragment extends Fragment
                 mProgressBar.setVisibility(View.GONE);
                 if(response.isSuccessful()){
                     ManPowerDetilData data = response.body();
-                    mListJmpd = data.getManPowerDetils();
-                    mViewAdapter = new ManPowerAdapter(mContext, mListJmpd, getCallbacks());
+                    mListManPowerDetail = data.getManPowerDetils();
+                    mViewAdapter = new ManPowerAdapter(mContext, mListManPowerDetail, getCallbacks());
                     mRecyclerView.setAdapter(mViewAdapter);
-                    final boolean isEmpty = mListJmpd.size()<=0;
+                    final boolean isEmpty = mListManPowerDetail.size()<=0;
                     updateEmptyView(isEmpty);
 
                 }else{
@@ -204,6 +203,5 @@ public class ManPowerFragment extends Fragment
         dacIntent.putExtra(CONST_JOB, jabatan);
 
         mContext.startActivity(dacIntent);
-
     }
 }

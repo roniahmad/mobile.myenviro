@@ -1,7 +1,7 @@
 package com.rsbunda.myenviro.constant;
 
 public class CommonConstant {
-    public static final String PACKAGE_NAME = "com.orcalab.myenviro";
+    public static final String PACKAGE_NAME = "com.rsbunda.myenviro";
 
     //Delay to update user information
     public static final int HANDLER_LAUNCH_DELAY = 300;
